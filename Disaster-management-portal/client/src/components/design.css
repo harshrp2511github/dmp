@@ -1,0 +1,121 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #0b0023;
+}
+
+
+
+li {
+    float: left;
+
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-underline: none;
+}
+
+li a:hover {
+    background-color: #8424c9;
+    text-decoration: none !important;
+    color: white;
+}
+
+.support {
+    position: relative;
+    border: 2px solid;
+    height: 250px;
+}
+
+
+
+.boxes {
+    position: relative;
+    float: left;
+    margin-left: 12%;
+    height : 150px;
+    width: 150px;
+    border: 1px solid;
+    background-color: #8424c9;
+    margin-top: -3.5%;
+}
+
+.boxes-1 {
+    position: relative;
+    float: left;
+    margin-left: 18%;
+    height : 150px;
+    width: 150px;
+    border: 1px solid;
+    background-color: #8424c9;
+    margin-top: -3.5%;
+}
+
+.box-text {
+    color: white;
+}
+
+.heading{
+    color: white;
+    margin-left: 350px;
+    margin-top: 5px;
+    font-size: 25px;
+}
+
+.message{
+    position: relative;
+    margin-top: 15%;
+
+
+}
+
+.city{
+    height:100%;
+    width:100%;
+    object-fit-width: cover;
+}
+
+.shelter-box {
+    height: 100px;
+    width: 50%;
+    border: 1px solid;
+    margin-left: 25%;
+    margin-top: 25px;
+    background: #8424c9;
+
+}
+
+.shelter-text {
+    margin-top: 50px;
+    color: #8424c9;
+}
+
+.shelter-left {
+    float: left;
+    width: 100px;
+    height: 100%;
+    margin: 0px;
+    padding-left: -3px;
+
+}
+
+.shelter-right {
+    float: left;
+    width: 350px;
+    height: 100%;
+    margin-left: 5px;
+
+
+}
+
+.shelter-inner {
+    color: white;
+    text-align: left;
+}
