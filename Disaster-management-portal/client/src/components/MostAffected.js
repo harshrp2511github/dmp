@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import {Bar} from 'react-chartjs-2';
+import axios from 'axios';
 
 class MostAffected extends Component
 {
@@ -12,16 +13,23 @@ class MostAffected extends Component
     }
 
     componentDidMount() {
-                let playername = ['San Francisco','San Jose','San Mateo','Milpitas','Fremont','Santa Clara', 'Santa Barbara', 'Las Vegas', 'Los Angeles', 'Fairsfield'];
-                let playerscore = [20,20,30,40,50,60,50,20,30,10];
-
+        axios.get(`http://localhost:3001/gettop10`)
+            .then(res => {
+                const fire = res.data.results;
+                console.log(fire);
+                let cityname = [];
+                let citycount = [];
+                fire.forEach(element => {
+                    cityname.push(element.name);
+                    citycount.push(element.count);
+                });
                 this.setState({
                     Data: {
-                        labels: playername,
+                        labels: cityname,
                         datasets:[
                             {
-                                label:'Top 10 Affected Regions',
-                                data: playerscore ,
+                                label:'Top 10 Fire Affected Regions ',
+                                data: citycount ,
                                 backgroundColor:[
                                     'rgba(255,30,30,0.8)',
                                     'rgba(155,100,210,0.8)',
@@ -39,7 +47,7 @@ class MostAffected extends Component
                         ]
                     }
                 });
-
+            })
     }
     render()
     {
