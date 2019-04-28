@@ -10,21 +10,27 @@ class Fire extends  Component{
         return(
             <div>
                 <Navigation />
-                <Link to="/most-affected"><div className="boxes-1"><h4 className="box-text">
-                    TOP 10 REGIONS<br/>
+                <Link to="/most-affected"><div className="boxes"><h4 className="box-text">
+                    FIRE REGIONS<br/>
 
                     <img src={flood} style={{ margin: "15px", height: "80px"}}/>
 
 
                 </h4></div></Link>
-                <Link><div className="boxes-1"><h4 className="box-text">
+                <Link><div className="boxes"><h4 className="box-text">
                     MEDICAL HELP<br/>
 
                     <img src={flood} style={{ margin: "15px", height: "80px"}}/>
 
                 </h4></div></Link>
-                <Link to="/fire-shelter"><div className="boxes-1"><h4 className="box-text">
+                <Link to="/fire-shelter"><div className="boxes"><h4 className="box-text">
                     SHELTER HELP<br/>
+
+                    <img src={flood} style={{ margin: "15px", height: "80px"}}/>
+
+                </h4></div></Link>
+                <Link to="/fire-shelter"><div className="boxes"><h4 className="box-text">
+                    FOOD HELP<br/>
 
                     <img src={flood} style={{ margin: "15px", height: "80px"}}/>
 

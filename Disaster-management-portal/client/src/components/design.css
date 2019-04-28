@@ -119,3 +119,27 @@ li a:hover {
     color: white;
     text-align: left;
 }
+
+.graph1{
+    position: relative;
+    height: 250px;
+    width: 75%;
+}
+
+.graph2{
+    position: relative;
+    height: 250px;
+    width: 75%;
+    margin-top: 2%;
+}
+
+.right-feed {
+    float: right;
+    position: relative;
+    border: 1px solid;
+    width: 20%;
+    height: 500px;
+    margin-top: -33%;
+    margin-right: 2%;
+    overflow-y: scroll;
+}

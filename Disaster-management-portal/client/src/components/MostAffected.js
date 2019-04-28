@@ -28,7 +28,7 @@ class MostAffected extends Component
                         labels: cityname,
                         datasets:[
                             {
-                                label:'Top 10 Fire Affected Regions ',
+                                label:'Top 10 cities with Pending Cases ',
                                 data: citycount ,
                                 backgroundColor:[
                                     'rgba(255,30,30,0.8)',
@@ -63,9 +63,20 @@ class MostAffected extends Component
                 <br />
                 <h2 style={{ color: '#8424c9'}}><b>TOP 10 AFFECTED REGIONS</b></h2>
                 <br />
-                <Bar
-                    data = {this.state.Data}
-                    options = {{ maintainAspectRatio: false }} />
+                <div className="graph1">
+                    <Bar
+                        data = {this.state.Data}
+                        options = {{ maintainAspectRatio: false }} />
+                </div>
+                <div className="graph2">
+                    <Bar
+                        data = {this.state.Data}
+                        options = {{ maintainAspectRatio: false }} />
+                </div>
+                <div className="right-feed">
+                    <h4 style={{ color: "#8424c9"}}><b>LIVE FEED</b></h4>
+
+                </div>
             </div>
         )
     }
