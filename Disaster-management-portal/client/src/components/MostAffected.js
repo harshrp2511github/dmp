@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import {Bar} from 'react-chartjs-2';
 import axios from 'axios';
+import twitter from './../photos/twitter.jpg'
+import facebook from './../photos/facebook.png'
 
 class MostAffected extends Component
 {
     constructor(props) {
         super(props);
         this.state = {
-            Data: {}
+            Data: {},
+            firedatas: []
         }
     }
 
@@ -48,7 +51,58 @@ class MostAffected extends Component
                     }
                 });
             })
+
+        axios.get(`http://localhost:3001/getfiredata`)
+            .then(res => {
+                this.setState({
+                    firedatas: res.data.results
+                })
+            })
     }
+
+
+
+    renderData(){
+        return this.state.firedatas.map((firedata) => {
+            if(firedata.source == "Twitter") {
+                return (
+                    <div className="each-live-twitter" >
+
+                        <p><b>Message: {firedata.message}</b></p>
+                        <p><b>Location: {firedata.location}</b></p>
+                        <p><b>Date: {firedata.date}</b></p>
+                        <p><b>Time: {firedata.time}</b></p>
+                    </div>
+                )
+            }
+
+            else if(firedata.source == "Facebook"){
+                return (
+                    <div className="each-live-facebook">
+                        <p><b>Message: {firedata.message}</b></p>
+                        <p><b>Location: {firedata.location}</b></p>
+                        <p><b>Date: {firedata.date}</b></p>
+                        <p><b>Time: {firedata.time}</b></p>
+                    </div>
+                )
+            }
+
+            else{
+                return (
+                    <div className="each-live-helpline">
+                        <p><b>Message: {firedata.message}</b></p>
+                        <p><b>Location: {firedata.location}</b></p>
+                        <p><b>Date: {firedata.date}</b></p>
+                        <p><b>Time: {firedata.time}</b></p>
+                    </div>
+                )
+            }
+
+            }
+
+        )
+    }
+
     render()
     {
         return(
@@ -75,7 +129,7 @@ class MostAffected extends Component
                 </div>
                 <div className="right-feed">
                     <h4 style={{ color: "#8424c9"}}><b>LIVE FEED</b></h4>
-
+                    {this.renderData()}
                 </div>
             </div>
         )
