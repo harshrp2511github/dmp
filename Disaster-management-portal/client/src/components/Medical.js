@@ -2,21 +2,21 @@ import React, { Component } from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import {Bar} from 'react-chartjs-2';
 import axios from 'axios';
-class MostAffected extends Component
+class Medical extends Component
 {
     constructor(props) {
         super(props);
         this.state = {
             Data: {},
             Data1: {},
-            firedatas: []
+            medicaldatas: []
         }
     }
 
     componentDidMount() {
 
-        this.timer = setInterval(()=> this.setfirecount(), 2000);
-        this.timer1 = setInterval(()=> this.setfiredata(), 2000);
+        this.timer = setInterval(()=> this.setmedicalcount(), 2000);
+        this.timer1 = setInterval(()=> this.setmedicaldata(), 2000);
     }
 
     componentWillUnmount() {
@@ -26,15 +26,15 @@ class MostAffected extends Component
         clearInterval(this.timer1);
     }
 
-    setfirecount(){
-        axios.get(`http://localhost:3001/getfirecount`)
+    setmedicalcount(){
+        axios.get(`http://localhost:3001/getmedicalcount`)
             .then(res => {
-                const fire = res.data.results;
-                console.log(fire);
+                const medical = res.data.results;
+                console.log(medical);
                 let city = [];
                 let stuck = [];
                 let rescued = [];
-                fire.forEach(element => {
+                medical.forEach(element => {
                     city.push(element.city);
                     stuck.push(element.stuck);
                     rescued.push(element.rescued);
@@ -91,11 +91,11 @@ class MostAffected extends Component
             })
     }
 
-    setfiredata(){
-        axios.get(`http://localhost:3001/getfiredata`)
+    setmedicaldata(){
+        axios.get(`http://localhost:3001/getmedicaldata`)
             .then(res => {
                 this.setState({
-                    firedatas: res.data.results
+                    medicaldatas: res.data.results
                 })
             })
     }
@@ -103,40 +103,40 @@ class MostAffected extends Component
 
 
     renderData(){
-        return this.state.firedatas.map((firedata) => {
-            if(firedata.source == "Twitter") {
-                return (
-                    <div className="each-live-twitter" >
+        return this.state.medicaldatas.map((medicaldata) => {
+                if(medicaldata.source == "Twitter") {
+                    return (
+                        <div className="each-live-twitter" >
 
-                        <p><b>Message: {firedata.message}</b></p>
-                        <p><b>Location: {firedata.location}</b></p>
-                        <p><b>Date: {firedata.date}</b></p>
-                        <p><b>Time: {firedata.time}</b></p>
-                    </div>
-                )
-            }
+                            <p><b>Message: {medicaldata.message}</b></p>
+                            <p><b>Location: {medicaldata.location}</b></p>
+                            <p><b>Date: {medicaldata.date}</b></p>
+                            <p><b>Time: {medicaldata.time}</b></p>
+                        </div>
+                    )
+                }
 
-            else if(firedata.source == "Facebook"){
-                return (
-                    <div className="each-live-facebook">
-                        <p><b>Message: {firedata.message}</b></p>
-                        <p><b>Location: {firedata.location}</b></p>
-                        <p><b>Date: {firedata.date}</b></p>
-                        <p><b>Time: {firedata.time}</b></p>
-                    </div>
-                )
-            }
+                else if(medicaldata.source == "Facebook"){
+                    return (
+                        <div className="each-live-facebook">
+                            <p><b>Message: {medicaldata.message}</b></p>
+                            <p><b>Location: {medicaldata.location}</b></p>
+                            <p><b>Date: {medicaldata.date}</b></p>
+                            <p><b>Time: {medicaldata.time}</b></p>
+                        </div>
+                    )
+                }
 
-            else{
-                return (
-                    <div className="each-live-helpline">
-                        <p><b>Message: {firedata.message}</b></p>
-                        <p><b>Location: {firedata.location}</b></p>
-                        <p><b>Date: {firedata.date}</b></p>
-                        <p><b>Time: {firedata.time}</b></p>
-                    </div>
-                )
-            }
+                else{
+                    return (
+                        <div className="each-live-helpline">
+                            <p><b>Message: {medicaldata.message}</b></p>
+                            <p><b>Location: {medicaldata.location}</b></p>
+                            <p><b>Date: {medicaldata.date}</b></p>
+                            <p><b>Time: {medicaldata.time}</b></p>
+                        </div>
+                    )
+                }
 
             }
 
@@ -159,11 +159,11 @@ class MostAffected extends Component
                 <div className="counter">
                     <h2 style={{ color: '#8424c9', marginTop: '0px'}}><b>TOP 10 AFFECTED REGIONS</b></h2>
                     <div className="update-1">
-                        <h4><b>FIRE-CASES PENDING:</b></h4>
+                        <h4><b>MEDICAL-CASES PENDING:</b></h4>
                         <h3><b>43</b></h3>
                     </div>
                     <div className="update-1">
-                        <h4><b>FIRE-CASES RESOLVED:</b></h4>
+                        <h4><b>MEDICAL-CASES RESOLVED:</b></h4>
                         <h3><b>43</b></h3>
                     </div>
                 </div>
@@ -185,5 +185,5 @@ class MostAffected extends Component
         )
     }
 }
-export default withRouter(MostAffected)
+export default withRouter(Medical)
 

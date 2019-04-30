@@ -35,6 +35,16 @@ class Home extends  Component{
                     <img src={flood} style={{ margin: "15px", height: "80px"}}/>
 
                 </h4></div></Link>
+                <div className="home-counter">
+                    <div className="home-update">
+                        <h4><b>TOTAL-CASES RESOLVED:</b></h4>
+                        <h3><b>43</b></h3>
+                    </div>
+                    <div className="home-update">
+                        <h4><b>TOTAL-CASES PENDING:</b></h4>
+                        <h3><b>43</b></h3>
+                    </div>
+                </div>
                 <div className="message">
                     <h1 style={{ color: "#0b0023"}}><b>HELP YOUR CITY!</b></h1>
                     <h2 style={{ color: "#8424c9"}}><b>TWEET ON TWITTER/ POST ON FACEBOOK/ CALL OUR TOLL FREE NO: 999 999-9999</b></h2>

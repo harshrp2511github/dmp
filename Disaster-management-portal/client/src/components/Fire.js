@@ -17,25 +17,25 @@ class Fire extends  Component{
 
 
                 </h4></div></Link>
-                <Link><div className="boxes"><h4 className="box-text">
+                <Link to="/medical"><div className="boxes"><h4 className="box-text">
                     MEDICAL HELP<br/>
 
                     <img src={flood} style={{ margin: "15px", height: "80px"}}/>
 
                 </h4></div></Link>
-                <Link to="/fire-shelter"><div className="boxes"><h4 className="box-text">
+                <Link to="shelter"><div className="boxes"><h4 className="box-text">
                     SHELTER HELP<br/>
 
                     <img src={flood} style={{ margin: "15px", height: "80px"}}/>
 
                 </h4></div></Link>
-                <Link to="/fire-shelter"><div className="boxes"><h4 className="box-text">
+                <Link to="/food"><div className="boxes"><h4 className="box-text">
                     FOOD HELP<br/>
 
                     <img src={flood} style={{ margin: "15px", height: "80px"}}/>
 
                 </h4></div></Link>
-                <div className="message">
+                <div className="message-1">
                     <h1 style={{ color: "#0b0023"}}><b>GET MORE INFORMATION!</b></h1>
                     <h2 style={{ color: "#8424c9"}}><b>KNOW ABOUT MOST AFFECTED REGIONS/ PEOPLE WHO NEED MEDICAL HELP/ PEOPLE WHO NEED SHELTER</b></h2>
                     <br/><br/>

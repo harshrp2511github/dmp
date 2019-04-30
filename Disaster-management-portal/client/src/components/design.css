@@ -71,9 +71,12 @@ li a:hover {
 
 .message{
     position: relative;
+    margin-top: 1%;
+}
+
+.message-1{
+    position: relative;
     margin-top: 15%;
-
-
 }
 
 .city{
@@ -138,8 +141,8 @@ li a:hover {
     position: relative;
     border: 1px solid;
     width: 20%;
-    height: 500px;
-    margin-top: -33%;
+    height: 480px;
+    margin-top: -32.9%;
     margin-right: 2%;
     overflow-y: scroll;
     box-shadow: 2px 2px 2px #ededed;
@@ -188,4 +191,38 @@ li a:hover {
     background-image: url("./../photos/helpline.svg");
     background-size: 100% 100%;
     opacity: 0.8;
+}
+
+.counter {
+    position: relative;
+    height: 125px;
+}
+
+.update-1 {
+    float: right;
+    height: 125px;
+    width: 125px;
+    margin-top: -50px;
+    margin-right: 40px;
+    background: #8424c9;
+    color: white;
+    box-shadow: 1px 1px 1px #731cb2;
+}
+
+.home-counter{
+    height: 150px;
+    width: 500px;
+    margin-top: 7%;
+    margin-left: 33%;
+}
+
+.home-update{
+    float: left;
+    height: 125px;
+    width: 125px;
+    margin-left: 87px;
+    margin-top: 25px;
+    background: #8424c9;
+    color: white;
+    box-shadow: 1px 1px 1px #731cb2;
 }
