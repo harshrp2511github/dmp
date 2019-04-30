@@ -2,37 +2,75 @@ import React, { Component } from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import {Bar} from 'react-chartjs-2';
 import axios from 'axios';
-import twitter from './../photos/twitter.jpg'
-import facebook from './../photos/facebook.png'
-
 class MostAffected extends Component
 {
     constructor(props) {
         super(props);
         this.state = {
             Data: {},
+            Data1: {},
             firedatas: []
         }
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:3001/gettop10`)
+
+        this.timer = setInterval(()=> this.setfirecount(), 5000);
+        this.timer1 = setInterval(()=> this.setfiredata(), 5000);
+    }
+
+    componentWillUnmount() {
+        this.timer  = null;
+        clearInterval(this.timer);
+        this.timer1 = null;
+        clearInterval(this.timer1);
+    }
+
+    setfirecount(){
+        axios.get(`http://localhost:3001/getfirecount`)
             .then(res => {
                 const fire = res.data.results;
                 console.log(fire);
-                let cityname = [];
-                let citycount = [];
+                let city = [];
+                let stuck = [];
+                let rescued = [];
                 fire.forEach(element => {
-                    cityname.push(element.name);
-                    citycount.push(element.count);
+                    city.push(element.city);
+                    stuck.push(element.stuck);
+                    rescued.push(element.rescued);
                 });
                 this.setState({
                     Data: {
-                        labels: cityname,
+                        labels: city,
                         datasets:[
                             {
                                 label:'Top 10 cities with Pending Cases ',
-                                data: citycount ,
+                                data: stuck ,
+                                backgroundColor:[
+                                    'rgba(255,30,30,0.8)',
+                                    'rgba(155,100,210,0.8)',
+                                    'rgba(90,178,255,0.8)',
+                                    'rgba(240,134,67,0.8)',
+                                    'rgba(120,120,120,0.8)',
+                                    'rgba(250,55,197,0.8)',
+                                    'rgba(148,244,129,0.8)',
+                                    'rgba(244,228,128,0.8)',
+                                    'rgba(247,171,133,0.8)',
+                                    'rgba(255,91,91,0.8)',
+                                    'rgba(91,153,255,0.8)'
+                                ]
+                            }
+                        ]
+                    }
+                });
+
+                this.setState({
+                    Data1: {
+                        labels: city,
+                        datasets:[
+                            {
+                                label:'Corresponding cities with number of Resolved Cases ',
+                                data: rescued ,
                                 backgroundColor:[
                                     'rgba(255,30,30,0.8)',
                                     'rgba(155,100,210,0.8)',
@@ -51,7 +89,9 @@ class MostAffected extends Component
                     }
                 });
             })
+    }
 
+    setfiredata(){
         axios.get(`http://localhost:3001/getfiredata`)
             .then(res => {
                 this.setState({
@@ -124,7 +164,7 @@ class MostAffected extends Component
                 </div>
                 <div className="graph2">
                     <Bar
-                        data = {this.state.Data}
+                        data = {this.state.Data1}
                         options = {{ maintainAspectRatio: false }} />
                 </div>
                 <div className="right-feed">
