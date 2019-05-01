@@ -14,7 +14,7 @@ var MongoClient = require('mongodb').MongoClient;
             const db = client.db('dmp');
 
             db.collection('FireCount')
-                .find().sort({stuck: -1}).limit(10)
+                .find()
                 .toArray((err, result) => {
                     if (err) throw err;
 

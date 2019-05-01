@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de5a4c92-4f7b-46b4-b102-523373a92401" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Disaster-management-portal/client/src/components/Food.js" beforeDir="false" afterPath="$PROJECT_DIR$/Disaster-management-portal/client/src/components/Food.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Disaster-management-portal/client/src/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/Disaster-management-portal/client/src/components/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Disaster-management-portal/client/src/components/Medical.js" beforeDir="false" afterPath="$PROJECT_DIR$/Disaster-management-portal/client/src/components/Medical.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Disaster-management-portal/client/src/components/MostAffected.js" beforeDir="false" afterPath="$PROJECT_DIR$/Disaster-management-portal/client/src/components/MostAffected.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Disaster-management-portal/client/src/components/Shelter.js" beforeDir="false" afterPath="$PROJECT_DIR$/Disaster-management-portal/client/src/components/Shelter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Disaster-management-portal/server/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Disaster-management-portal/server/routes/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Disaster-management-portal/client/src/components/MostAffected.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
-              <caret line="67" column="33" lean-forward="true" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
+            <state relative-caret-position="357">
+              <caret line="145" column="50" selection-start-line="145" selection-start-column="50" selection-end-line="145" selection-end-column="50" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -48,7 +44,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Disaster-management-portal/client/src/components/design.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3570">
+            <state relative-caret-position="391">
               <caret line="210" selection-start-line="210" selection-end-line="210" />
             </state>
           </provider>
@@ -69,7 +65,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Disaster-management-portal/client/src/components/Medical.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-119">
+            <state relative-caret-position="833">
               <caret line="53" column="82" lean-forward="true" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="82" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
@@ -78,7 +74,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Disaster-management-portal/client/src/components/Shelter.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="901">
@@ -86,6 +82,26 @@
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Disaster-management-portal/client/src/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Disaster-management-portal/server/routes/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -108,13 +124,13 @@
         <option value="$PROJECT_DIR$/Disaster-management-portal/client/src/components/Medicine.js" />
         <option value="$PROJECT_DIR$/Disaster-management-portal/client/src/components/RouterPage.js" />
         <option value="$PROJECT_DIR$/Disaster-management-portal/client/src/components/Fire.js" />
-        <option value="$PROJECT_DIR$/Disaster-management-portal/server/routes/index.js" />
         <option value="$PROJECT_DIR$/Disaster-management-portal/client/src/components/design.css" />
         <option value="$PROJECT_DIR$/Disaster-management-portal/client/src/components/Home.js" />
-        <option value="$PROJECT_DIR$/Disaster-management-portal/client/src/components/MostAffected.js" />
         <option value="$PROJECT_DIR$/Disaster-management-portal/client/src/components/Food.js" />
         <option value="$PROJECT_DIR$/Disaster-management-portal/client/src/components/Medical.js" />
         <option value="$PROJECT_DIR$/Disaster-management-portal/client/src/components/Shelter.js" />
+        <option value="$PROJECT_DIR$/Disaster-management-portal/server/routes/index.js" />
+        <option value="$PROJECT_DIR$/Disaster-management-portal/client/src/components/MostAffected.js" />
       </list>
     </option>
   </component>
@@ -223,14 +239,16 @@
       <workItem from="1556664803003" duration="4471000" />
       <workItem from="1556681774994" duration="1851000" />
       <workItem from="1556692380485" duration="1097000" />
+      <workItem from="1556734280559" duration="2416000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30741000" />
+    <option name="totallyTimeSpent" value="33157000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17911434" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -293,23 +311,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Disaster-management-portal/server/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="228" column="39" lean-forward="true" selection-start-line="228" selection-start-column="39" selection-end-line="228" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Disaster-management-portal/client/src/components/MostAffected.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="67" column="33" lean-forward="true" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Disaster-management-portal/client/src/components/Home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1666">
@@ -321,10 +322,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Disaster-management-portal/client/src/components/design.css">
+    <entry file="file://$PROJECT_DIR$/Disaster-management-portal/client/src/components/Medical.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3570">
-          <caret line="210" selection-start-line="210" selection-end-line="210" />
+        <state relative-caret-position="833">
+          <caret line="53" column="82" lean-forward="true" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="82" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disaster-management-portal/client/src/components/Shelter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="53" column="65" selection-start-line="53" selection-start-column="65" selection-end-line="53" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disaster-management-portal/client/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disaster-management-portal/server/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -338,20 +368,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Disaster-management-portal/client/src/components/Medical.js">
+    <entry file="file://$PROJECT_DIR$/Disaster-management-portal/client/src/components/design.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
-          <caret line="53" column="82" lean-forward="true" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="82" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="391">
+          <caret line="210" selection-start-line="210" selection-end-line="210" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Disaster-management-portal/client/src/components/Shelter.js">
+    <entry file="file://$PROJECT_DIR$/Disaster-management-portal/client/src/components/MostAffected.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="65" selection-start-line="53" selection-start-column="65" selection-end-line="53" selection-end-column="65" />
+        <state relative-caret-position="357">
+          <caret line="145" column="50" selection-start-line="145" selection-start-column="50" selection-end-line="145" selection-end-column="50" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
