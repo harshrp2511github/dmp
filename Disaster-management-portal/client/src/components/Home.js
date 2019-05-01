@@ -3,10 +3,43 @@ import { withRouter, Link } from 'react-router-dom';
 import Navigation from './Navigation';
 //import fire from './../photos/fire.png'
 import flood from './../photos/flood.jpg'
+import axios from "axios";
 
 
 class Home extends  Component{
-    render() {
+    constructor(props) {
+        super(props);
+        this.state = {
+            stuck: 0,
+            rescued: 0
+        }
+    }
+
+    componentDidMount() {
+        this.timer = setInterval(()=> this.setallcount(), 2000);
+    }
+
+    componentWillUnmount() {
+        this.timer  = null;
+        clearInterval(this.timer);
+    }
+
+    setallcount(){
+        axios.get(`http://localhost:3001/getallcount`)
+            .then(res => {
+                console.log(res.data.results[0])
+                const n1 = res.data.results[0].AllStuck;
+                const n2 = res.data.results[0].AllRescued;
+
+                this.setState({
+                    stuck: n1,
+                    rescued: n2
+                })
+            })
+    }
+
+
+        render() {
         return(
             <div>
                 <Navigation />
@@ -37,13 +70,14 @@ class Home extends  Component{
                 </h4></div></Link>
                 <div className="home-counter">
                     <div className="home-update">
-                        <h4><b>TOTAL-CASES RESOLVED:</b></h4>
-                        <h3><b>43</b></h3>
+                        <h4><b>TOTAL-CASES OVERALL:</b></h4>
+                        <h3><b>{this.state.stuck}</b></h3>
                     </div>
                     <div className="home-update">
-                        <h4><b>TOTAL-CASES PENDING:</b></h4>
-                        <h3><b>43</b></h3>
+                        <h4><b>TOTAL-CASES RESOLVED:</b></h4>
+                        <h3><b>{this.state.rescued}</b></h3>
                     </div>
+
                 </div>
                 <div className="message">
                     <h1 style={{ color: "#0b0023"}}><b>HELP YOUR CITY!</b></h1>

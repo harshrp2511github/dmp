@@ -9,7 +9,9 @@ class Medical extends Component
         this.state = {
             Data: {},
             Data1: {},
-            medicaldatas: []
+            medicaldatas: [],
+            stuck: 0,
+            rescued: 0
         }
     }
 
@@ -17,6 +19,7 @@ class Medical extends Component
 
         this.timer = setInterval(()=> this.setmedicalcount(), 2000);
         this.timer1 = setInterval(()=> this.setmedicaldata(), 2000);
+        this.timer2 = setInterval(()=> this.setallcount(), 2000);
     }
 
     componentWillUnmount() {
@@ -24,6 +27,8 @@ class Medical extends Component
         clearInterval(this.timer);
         this.timer1 = null;
         clearInterval(this.timer1);
+        this.timer2 = null;
+        clearInterval(this.timer2);
     }
 
     setmedicalcount(){
@@ -100,6 +105,22 @@ class Medical extends Component
             })
     }
 
+    setallcount(){
+        axios.get(`http://localhost:3001/getallcount`)
+            .then(res => {
+                console.log(res.data.results[0])
+                const n1 = res.data.results[0].MedicalStuck;
+                const n2 = res.data.results[0].MedicalRescued;
+
+                this.setState({
+                    stuck: n1,
+                    rescued: n2
+                })
+            })
+    }
+
+
+
 
 
     renderData(){
@@ -159,12 +180,12 @@ class Medical extends Component
                 <div className="counter">
                     <h2 style={{ color: '#8424c9', marginTop: '0px'}}><b>TOP 10 AFFECTED REGIONS</b></h2>
                     <div className="update-1">
-                        <h4><b>MEDICAL-CASES PENDING:</b></h4>
-                        <h3><b>43</b></h3>
+                        <h4><b>MEDICAL-CASES RESOLVED:</b></h4>
+                        <h3><b>{this.state.rescued}</b></h3>
                     </div>
                     <div className="update-1">
-                        <h4><b>MEDICAL-CASES RESOLVED:</b></h4>
-                        <h3><b>43</b></h3>
+                        <h4><b>MEDICAL-CASES OVERALL:</b></h4>
+                        <h3><b>{this.state.stuck}</b></h3>
                     </div>
                 </div>
                 <div className="graph1">

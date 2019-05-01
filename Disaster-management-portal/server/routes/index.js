@@ -210,6 +210,32 @@ router.get('/getshelterdata', (req, res) => {
     );
 });
 
+router.get('/getallcount', (req, res) => {
+    MongoClient.connect(
+        url,
+        (err, client) => {
+            assert.equal(null, err);
+            console.log('Connected successfully to server');
+
+            const db = client.db('dmp');
+
+            db.collection('AllCount')
+                .find()
+                .toArray((err, result) => {
+                    if (err) throw err;
+
+                    res.status(201).json({
+                        status: 'true',
+                        results: result
+                    });
+                });
+
+            client.close();
+        }
+    );
+});
+
+
 
 
 

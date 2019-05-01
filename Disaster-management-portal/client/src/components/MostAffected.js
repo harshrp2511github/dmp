@@ -9,7 +9,9 @@ class MostAffected extends Component
         this.state = {
             Data: {},
             Data1: {},
-            firedatas: []
+            firedatas: [],
+            stuck: 0,
+            rescued: 0
         }
     }
 
@@ -17,6 +19,7 @@ class MostAffected extends Component
 
         this.timer = setInterval(()=> this.setfirecount(), 2000);
         this.timer1 = setInterval(()=> this.setfiredata(), 2000);
+        this.timer2 = setInterval(()=> this.setallcount(), 2000);
     }
 
     componentWillUnmount() {
@@ -24,6 +27,8 @@ class MostAffected extends Component
         clearInterval(this.timer);
         this.timer1 = null;
         clearInterval(this.timer1);
+        this.timer2 = null;
+        clearInterval(this.timer2);
     }
 
     setfirecount(){
@@ -100,6 +105,20 @@ class MostAffected extends Component
             })
     }
 
+    setallcount(){
+        axios.get(`http://localhost:3001/getallcount`)
+            .then(res => {
+                console.log(res.data.results[0])
+                const n1 = res.data.results[0].FireStuck;
+                const n2 = res.data.results[0].FireRescued;
+
+                this.setState({
+                    stuck: n1,
+                    rescued: n2
+                })
+            })
+    }
+
 
 
     renderData(){
@@ -159,12 +178,12 @@ class MostAffected extends Component
                 <div className="counter">
                     <h2 style={{ color: '#8424c9', marginTop: '0px'}}><b>TOP 10 AFFECTED REGIONS</b></h2>
                     <div className="update-1">
-                        <h4><b>FIRE-CASES PENDING:</b></h4>
-                        <h3><b>43</b></h3>
+                        <h4><b>FIRE-CASES RESOLVED:</b></h4>
+                        <h3><b>{this.state.rescued}</b></h3>
                     </div>
                     <div className="update-1">
-                        <h4><b>FIRE-CASES RESOLVED:</b></h4>
-                        <h3><b>43</b></h3>
+                        <h4><b>FIRE-CASES OVERALL:</b></h4>
+                        <h3><b>{this.state.stuck}</b></h3>
                     </div>
                 </div>
                 <div className="graph1">
