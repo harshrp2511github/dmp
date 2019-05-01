@@ -36,7 +36,7 @@ class Food extends Component
     setfoodcount(){
         axios.get(`http://localhost:3001/getfoodcount`)
             .then(res => {
-                const food = res.data.results;
+                const food = res.data.results[0].data.sort(function(a, b){return b.stuck-a.stuck}).slice(0,10);
                 console.log(food);
                 let city = [];
                 let stuck = [];
@@ -125,25 +125,25 @@ class Food extends Component
 
     renderData(){
         return this.state.fooddatas.map((fooddata) => {
-                if(fooddata.source == "Twitter") {
+                if(fooddata.source == "twitter") {
                     return (
                         <div className="each-live-twitter" >
 
                             <p><b>Message: {fooddata.message}</b></p>
                             <p><b>Location: {fooddata.location}</b></p>
                             <p><b>Date: {fooddata.date}</b></p>
-                            <p><b>Time: {fooddata.time}</b></p>
+                            <p><b>Category: {fooddata.category}</b></p>
                         </div>
                     )
                 }
 
-                else if(fooddata.source == "Facebook"){
+                else if(fooddata.source == "fb"){
                     return (
                         <div className="each-live-facebook">
                             <p><b>Message: {fooddata.message}</b></p>
                             <p><b>Location: {fooddata.location}</b></p>
                             <p><b>Date: {fooddata.date}</b></p>
-                            <p><b>Time: {fooddata.time}</b></p>
+                            <p><b>Category: {fooddata.category}</b></p>
                         </div>
                     )
                 }
@@ -154,7 +154,7 @@ class Food extends Component
                             <p><b>Message: {fooddata.message}</b></p>
                             <p><b>Location: {fooddata.location}</b></p>
                             <p><b>Date: {fooddata.date}</b></p>
-                            <p><b>Time: {fooddata.time}</b></p>
+                            <p><b>Category: {fooddata.category}</b></p>
                         </div>
                     )
                 }

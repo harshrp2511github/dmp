@@ -65,7 +65,7 @@ router.get('/getfoodcount', (req, res) => {
             const db = client.db('dmp');
 
             db.collection('FoodCount')
-                .find().sort({stuck: -1}).limit(10)
+                .find()
                 .toArray((err, result) => {
                     if (err) throw err;
 
@@ -117,7 +117,7 @@ router.get('/getmedicalcount', (req, res) => {
             const db = client.db('dmp');
 
             db.collection('MedicalCount')
-                .find().sort({stuck: -1}).limit(10)
+                .find()
                 .toArray((err, result) => {
                     if (err) throw err;
 
@@ -169,7 +169,7 @@ router.get('/getsheltercount', (req, res) => {
             const db = client.db('dmp');
 
             db.collection('ShelterCount')
-                .find().sort({stuck: -1}).limit(10)
+                .find()
                 .toArray((err, result) => {
                     if (err) throw err;
 

@@ -36,7 +36,7 @@ class MostAffected extends Component
     setfirecount(){
         axios.get(`http://localhost:3001/getfirecount`)
             .then(res => {
-                const fire = res.data.results[0].data.sort(function(a, b){return b.stuck-a.stuck})
+                const fire = res.data.results[0].data.sort(function(a, b){return b.stuck-a.stuck}).slice(0,10);
                 console.log(fire);
                 let city = [];
                 let stuck = [];
@@ -125,14 +125,14 @@ class MostAffected extends Component
 
     renderData(){
         return this.state.firedatas.map((firedata) => {
-            if(firedata.source == "Twitter") {
+            if(firedata.source == "twitter") {
                 return (
                     <div className="each-live-twitter" >
 
                         <p><b>Message: {firedata.message}</b></p>
                         <p><b>Location: {firedata.location}</b></p>
                         <p><b>Date: {firedata.date}</b></p>
-                        <p><b>Time: {firedata.time}</b></p>
+                        <p><b>Category: {firedata.category}</b></p>
                     </div>
                 )
             }
@@ -154,7 +154,7 @@ class MostAffected extends Component
                         <p><b>Message: {firedata.message}</b></p>
                         <p><b>Location: {firedata.location}</b></p>
                         <p><b>Date: {firedata.date}</b></p>
-                        <p><b>Time: {firedata.time}</b></p>
+                        <p><b>Category: {firedata.category}</b></p>
                     </div>
                 )
             }

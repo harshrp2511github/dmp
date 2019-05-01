@@ -36,7 +36,7 @@ class Medical extends Component
     setmedicalcount(){
         axios.get(`http://localhost:3001/getmedicalcount`)
             .then(res => {
-                const medical = res.data.results;
+                const medical = res.data.results[0].data.sort(function(a, b){return b.stuck-a.stuck}).slice(0,10);
                 console.log(medical);
                 let city = [];
                 let stuck = [];
@@ -127,25 +127,25 @@ class Medical extends Component
 
     renderData(){
         return this.state.medicaldatas.map((medicaldata) => {
-                if(medicaldata.source == "Twitter") {
+                if(medicaldata.source == "twitter") {
                     return (
                         <div className="each-live-twitter" >
 
                             <p><b>Message: {medicaldata.message}</b></p>
                             <p><b>Location: {medicaldata.location}</b></p>
                             <p><b>Date: {medicaldata.date}</b></p>
-                            <p><b>Time: {medicaldata.time}</b></p>
+                            <p><b>Category: {medicaldata.category}</b></p>
                         </div>
                     )
                 }
 
-                else if(medicaldata.source == "Facebook"){
+                else if(medicaldata.source == "fb"){
                     return (
                         <div className="each-live-facebook">
                             <p><b>Message: {medicaldata.message}</b></p>
                             <p><b>Location: {medicaldata.location}</b></p>
                             <p><b>Date: {medicaldata.date}</b></p>
-                            <p><b>Time: {medicaldata.time}</b></p>
+                            <p><b>Category: {medicaldata.category}</b></p>
                         </div>
                     )
                 }
@@ -156,7 +156,7 @@ class Medical extends Component
                             <p><b>Message: {medicaldata.message}</b></p>
                             <p><b>Location: {medicaldata.location}</b></p>
                             <p><b>Date: {medicaldata.date}</b></p>
-                            <p><b>Time: {medicaldata.time}</b></p>
+                            <p><b>Category: {medicaldata.category}</b></p>
                         </div>
                     )
                 }

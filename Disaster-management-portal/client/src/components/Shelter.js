@@ -36,7 +36,7 @@ class Shelter extends Component
     setsheltercount(){
         axios.get(`http://localhost:3001/getsheltercount`)
             .then(res => {
-                const shelter = res.data.results;
+                const shelter = res.data.results[0].data.sort(function(a, b){return b.stuck-a.stuck}).slice(0,10);
                 console.log(shelter);
                 let city = [];
                 let stuck = [];
@@ -125,25 +125,25 @@ class Shelter extends Component
 
     renderData(){
         return this.state.shelterdatas.map((shelterdata) => {
-                if(shelterdata.source == "Twitter") {
+                if(shelterdata.source == "twitter") {
                     return (
                         <div className="each-live-twitter" >
 
                             <p><b>Message: {shelterdata.message}</b></p>
                             <p><b>Location: {shelterdata.location}</b></p>
                             <p><b>Date: {shelterdata.date}</b></p>
-                            <p><b>Time: {shelterdata.time}</b></p>
+                            <p><b>Category: {shelterdata.category}</b></p>
                         </div>
                     )
                 }
 
-                else if(shelterdata.source == "Facebook"){
+                else if(shelterdata.source == "fb"){
                     return (
                         <div className="each-live-facebook">
                             <p><b>Message: {shelterdata.message}</b></p>
                             <p><b>Location: {shelterdata.location}</b></p>
                             <p><b>Date: {shelterdata.date}</b></p>
-                            <p><b>Time: {shelterdata.time}</b></p>
+                            <p><b>Category: {shelterdata.category}</b></p>
                         </div>
                     )
                 }
@@ -154,7 +154,7 @@ class Shelter extends Component
                             <p><b>Message: {shelterdata.message}</b></p>
                             <p><b>Location: {shelterdata.location}</b></p>
                             <p><b>Date: {shelterdata.date}</b></p>
-                            <p><b>Time: {shelterdata.time}</b></p>
+                            <p><b>Category: {shelterdata.category}</b></p>
                         </div>
                     )
                 }
