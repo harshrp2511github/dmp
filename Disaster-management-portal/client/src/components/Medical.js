@@ -51,7 +51,7 @@ class Medical extends Component
                         labels: city,
                         datasets:[
                             {
-                                label:'Top 10 cities with Pending Cases ',
+                                label:'TOP 10 CITIES WITH MEDICAL CASES REGISTERED',
                                 data: stuck ,
                                 backgroundColor:[
                                     'rgba(255,30,30,0.8)',
@@ -76,7 +76,7 @@ class Medical extends Component
                         labels: city,
                         datasets:[
                             {
-                                label:'Corresponding cities with number of Resolved Cases ',
+                                label:'CORRESPONDING CITIES WITH NO OF CASES RESOLVED',
                                 data: rescued ,
                                 backgroundColor:[
                                     'rgba(255,30,30,0.8)',
@@ -180,7 +180,7 @@ class Medical extends Component
                 <br />
 
                 <div className="counter">
-                    <h2 style={{ color: '#8424c9', marginTop: '0px'}}><b>TOP 10 AFFECTED REGIONS</b></h2>
+                    <h2 style={{ color: '#8424c9', marginTop: '0px'}}><b>TOP 10 CITIES WITH MEDICAL CASES</b></h2>
                     <div className="update-1">
                         <h5><b>MEDICAL-CASES RESOLVED:</b></h5>
                         <h3><b>
@@ -194,7 +194,7 @@ class Medical extends Component
                                             frameStyle={perc => (
                                                 perc === 100 ? {} : {backgroundColor: '#8424c9'}
                                             )}
-                                            duration={300}
+
                             />
                         </b></h3>
                     </div>
@@ -211,7 +211,7 @@ class Medical extends Component
                                             frameStyle={perc => (
                                                 perc === 100 ? {} : {backgroundColor: '#8424c9'}
                                             )}
-                                            duration={300}
+
                             />
                         </b></h3>
                     </div>

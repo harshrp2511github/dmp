@@ -83,7 +83,7 @@ class Home extends  Component{
                                             frameStyle={perc => (
                                                 perc === 100 ? {} : {backgroundColor: '#8424c9'}
                                             )}
-                                            duration={300}
+
                                             />
                         </b></h3>
                     </div>
@@ -100,7 +100,7 @@ class Home extends  Component{
                                             frameStyle={perc => (
                                                 perc === 100 ? {} : {backgroundColor: '#8424c9'}
                                             )}
-                                            duration={300}
+
                             />
                         </b></h3>
                     </div>
