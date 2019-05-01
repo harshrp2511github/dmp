@@ -4,6 +4,7 @@ import Navigation from './Navigation';
 //import fire from './../photos/fire.png'
 import flood from './../photos/flood.jpg'
 import axios from "axios";
+import AnimatedNumber from 'react-animated-number';
 
 
 class Home extends  Component{
@@ -71,11 +72,37 @@ class Home extends  Component{
                 <div className="home-counter">
                     <div className="home-update">
                         <h4><b>TOTAL-CASES OVERALL:</b></h4>
-                        <h3><b>{this.state.stuck}</b></h3>
+                        <h3><b>
+                            <AnimatedNumber component="text" value={this.state.stuck}
+                                            style={{
+                                                transition: '0.8s ease-out',
+                                                fontSize: 48,
+                                                transitionProperty:
+                                                    'background-color, color, opacity'
+                                            }}
+                                            frameStyle={perc => (
+                                                perc === 100 ? {} : {backgroundColor: '#8424c9'}
+                                            )}
+                                            duration={300}
+                                            />
+                        </b></h3>
                     </div>
                     <div className="home-update">
                         <h4><b>TOTAL-CASES RESOLVED:</b></h4>
-                        <h3><b>{this.state.rescued}</b></h3>
+                        <h3><b>
+                            <AnimatedNumber component="text" value={this.state.rescued}
+                                            style={{
+                                                transition: '0.8s ease-out',
+                                                fontSize: 48,
+                                                transitionProperty:
+                                                    'background-color, color, opacity'
+                                            }}
+                                            frameStyle={perc => (
+                                                perc === 100 ? {} : {backgroundColor: '#8424c9'}
+                                            )}
+                                            duration={300}
+                            />
+                        </b></h3>
                     </div>
 
                 </div>

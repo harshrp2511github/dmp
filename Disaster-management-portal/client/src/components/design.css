@@ -206,8 +206,10 @@ li a:hover {
     margin-right: 40px;
     background: #8424c9;
     color: white;
-    box-shadow: 1px 1px 1px #731cb2;
+    box-shadow: 4px 4px 4px #731cb2;
 }
+
+
 
 .home-counter{
     height: 150px;
@@ -224,5 +226,5 @@ li a:hover {
     margin-top: 25px;
     background: #8424c9;
     color: white;
-    box-shadow: 1px 1px 1px #731cb2;
+    box-shadow: 4px 4px 4px #731cb2;
 }

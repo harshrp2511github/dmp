@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import {Bar} from 'react-chartjs-2';
 import axios from 'axios';
+import AnimatedNumber from 'react-animated-number';
+
 class Shelter extends Component
 {
     constructor(props) {
@@ -178,12 +180,38 @@ class Shelter extends Component
                 <div className="counter">
                     <h2 style={{ color: '#8424c9', marginTop: '0px'}}><b>TOP 10 AFFECTED REGIONS</b></h2>
                     <div className="update-1">
-                        <h4><b>SHELTER-CASES RESOLVED:</b></h4>
-                        <h3><b>{this.state.rescued}</b></h3>
+                        <h5><b>SHELTER-CASES RESOLVED:</b></h5>
+                        <h3><b>
+                            <AnimatedNumber component="text" value={this.state.rescued}
+                                            style={{
+                                                transition: '0.8s ease-out',
+                                                fontSize: 48,
+                                                transitionProperty:
+                                                    'background-color, color, opacity'
+                                            }}
+                                            frameStyle={perc => (
+                                                perc === 100 ? {} : {backgroundColor: '#8424c9'}
+                                            )}
+                                            duration={300}
+                            />
+                        </b></h3>
                     </div>
                     <div className="update-1">
-                        <h4><b>SHELTER-CASES OVERALL:</b></h4>
-                        <h3><b>{this.state.stuck}</b></h3>
+                        <h5><b>SHELTER-CASES OVERALL:</b></h5>
+                        <h3><b>
+                            <AnimatedNumber component="text" value={this.state.stuck}
+                                            style={{
+                                                transition: '0.8s ease-out',
+                                                fontSize: 48,
+                                                transitionProperty:
+                                                    'background-color, color, opacity'
+                                            }}
+                                            frameStyle={perc => (
+                                                perc === 100 ? {} : {backgroundColor: '#8424c9'}
+                                            )}
+                                            duration={300}
+                            />
+                        </b></h3>
                     </div>
                 </div>
                 <div className="graph1">
