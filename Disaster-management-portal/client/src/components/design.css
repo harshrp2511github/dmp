@@ -139,19 +139,18 @@ li a:hover {
 .right-feed {
     float: right;
     position: relative;
-    border: 1px solid;
+    background-color: #c9c9c9;
     width: 20%;
     height: 500px;
     margin-top: -33.5%;
     margin-right: 2%;
     overflow-y: scroll;
-    box-shadow: 2px 2px 2px #ededed;
+    box-shadow: 2px 2px 2px #b2b2b2;
 }
 
 .each-live-twitter {
     height: 100px;
     width: 96%;
-    border: 1px solid white;
     margin: 2%;
     text-align: left;
     overflow-y: scroll;
@@ -166,7 +165,6 @@ li a:hover {
 .each-live-facebook {
     height: 100px;
     width: 96%;
-    border: 1px solid white;
     margin: 2%;
     text-align: left;
     overflow-y: scroll;
@@ -181,7 +179,6 @@ li a:hover {
 .each-live-helpline {
     height: 100px;
     width: 96%;
-    border: 1px solid white;
     margin: 2%;
     text-align: left;
     overflow-y: scroll;
