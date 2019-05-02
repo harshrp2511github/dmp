@@ -145,7 +145,7 @@ li a:hover {
     margin-top: -33.5%;
     margin-right: 2%;
     overflow-y: scroll;
-    box-shadow: 2px 2px 2px #b2b2b2;
+    box-shadow: 4px 4px 4px #b2b2b2;
 }
 
 .each-live-twitter {
