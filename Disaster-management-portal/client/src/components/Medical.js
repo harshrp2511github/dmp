@@ -139,7 +139,7 @@ class Medical extends Component
                     )
                 }
 
-                else if(medicaldata.source == "fb"){
+                else if(medicaldata.source == "fb") {
                     return (
                         <div className="each-live-facebook">
                             <p><b>Message: {medicaldata.message}</b></p>
