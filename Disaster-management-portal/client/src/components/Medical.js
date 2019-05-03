@@ -34,7 +34,7 @@ class Medical extends Component
     }
 
     setmedicalcount(){
-        axios.get(`http://ec2-18-220-183-234.us-east-2.compute.amazonaws.com:3001/getmedicalcount`)
+        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getmedicalcount`)
             .then(res => {
                 const medical = res.data.results[0].data.sort(function(a, b){return b.stuck-a.stuck}).slice(0,10);
                 console.log(medical);
@@ -99,7 +99,7 @@ class Medical extends Component
     }
 
     setmedicaldata(){
-        axios.get(`http://ec2-18-220-183-234.us-east-2.compute.amazonaws.com:3001/getmedicaldata`)
+        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getmedicaldata`)
             .then(res => {
                 this.setState({
                     medicaldatas: res.data.results
@@ -108,7 +108,7 @@ class Medical extends Component
     }
 
     setallcount(){
-        axios.get(`http://ec2-18-220-183-234.us-east-2.compute.amazonaws.com:3001/getallcount`)
+        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getallcount`)
             .then(res => {
                 console.log(res.data.results[0])
                 const n1 = res.data.results[0].MedicalStuck;

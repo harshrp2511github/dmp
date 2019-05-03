@@ -34,7 +34,7 @@ class Shelter extends Component
     }
 
     setsheltercount(){
-        axios.get(`http://ec2-18-220-183-234.us-east-2.compute.amazonaws.com:3001/getsheltercount`)
+        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getsheltercount`)
             .then(res => {
                 const shelter = res.data.results[0].data.sort(function(a, b){return b.stuck-a.stuck}).slice(0,10);
                 console.log(shelter);
@@ -99,7 +99,7 @@ class Shelter extends Component
     }
 
     setshelterdata(){
-        axios.get(`http://ec2-18-220-183-234.us-east-2.compute.amazonaws.com:3001/getshelterdata`)
+        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getshelterdata`)
             .then(res => {
                 this.setState({
                     shelterdatas: res.data.results
@@ -108,7 +108,7 @@ class Shelter extends Component
     }
 
     setallcount(){
-        axios.get(`http://ec2-18-220-183-234.us-east-2.compute.amazonaws.com:3001/getallcount`)
+        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getallcount`)
             .then(res => {
                 console.log(res.data.results[0])
                 const n1 = res.data.results[0].ShelterStuck;

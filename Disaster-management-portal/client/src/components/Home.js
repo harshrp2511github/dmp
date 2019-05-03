@@ -26,7 +26,7 @@ class Home extends  Component{
     }
 
     setallcount(){
-        axios.get(`http://ec2-18-220-183-234.us-east-2.compute.amazonaws.com:3001/getallcount`)
+        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getallcount`)
             .then(res => {
                 console.log(res.data.results[0])
                 const n1 = res.data.results[0].AllStuck;
