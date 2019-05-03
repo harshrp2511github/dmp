@@ -34,7 +34,7 @@ class Food extends Component
     }
 
     setfoodcount(){
-        axios.get(`http://localhost:3001/getfoodcount`)
+        axios.get(`http://ec2-18-220-183-234.us-east-2.compute.amazonaws.com:3001/getfoodcount`)
             .then(res => {
                 const food = res.data.results[0].data.sort(function(a, b){return b.stuck-a.stuck}).slice(0,10);
                 console.log(food);
@@ -99,7 +99,7 @@ class Food extends Component
     }
 
     setfooddata(){
-        axios.get(`http://localhost:3001/getfooddata`)
+        axios.get(`http://ec2-18-220-183-234.us-east-2.compute.amazonaws.com:3001/getfooddata`)
             .then(res => {
                 this.setState({
                     fooddatas: res.data.results
@@ -108,7 +108,7 @@ class Food extends Component
     }
 
     setallcount(){
-        axios.get(`http://localhost:3001/getallcount`)
+        axios.get(`http://ec2-18-220-183-234.us-east-2.compute.amazonaws.com:3001/getallcount`)
             .then(res => {
                 console.log(res.data.results[0])
                 const n1 = res.data.results[0].FoodStuck;

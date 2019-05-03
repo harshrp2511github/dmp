@@ -34,7 +34,7 @@ class MostAffected extends Component
     }
 
     setfirecount(){
-        axios.get(`http://localhost:3001/getfirecount`)
+        axios.get(`http://ec2-18-220-183-234.us-east-2.compute.amazonaws.com:3001/getfirecount`)
             .then(res => {
                 const fire = res.data.results[0].data.sort(function(a, b){return b.stuck-a.stuck}).slice(0,10);
                 console.log(fire);
@@ -99,7 +99,7 @@ class MostAffected extends Component
     }
 
     setfiredata(){
-        axios.get(`http://localhost:3001/getfiredata`)
+        axios.get(`http://ec2-18-220-183-234.us-east-2.compute.amazonaws.com:3001/getfiredata`)
             .then(res => {
                 this.setState({
                     firedatas: res.data.results
@@ -108,7 +108,7 @@ class MostAffected extends Component
     }
 
     setallcount(){
-        axios.get(`http://localhost:3001/getallcount`)
+        axios.get(`http://ec2-18-220-183-234.us-east-2.compute.amazonaws.com:3001/getallcount`)
             .then(res => {
                 console.log(res.data.results[0])
                 const n1 = res.data.results[0].FireStuck;
