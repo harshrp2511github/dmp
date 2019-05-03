@@ -221,7 +221,7 @@ router.get('/getallcount', (req, res) => {
             const db = client.db('test');
 
             db.collection('AllCount')
-                .find({_id: -1}).limit(1)
+                .find().sort({_id: -1}).limit(1)
                 .toArray((err, result) => {
                     if (err) throw err;
 
