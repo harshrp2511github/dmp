@@ -26,7 +26,14 @@ class Home extends  Component{
     }
 
     setallcount(){
-        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getallcount`)
+        const req_header = {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                credentials: 'include'
+            }
+        };
+        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getallcount`, req_header)
             .then(res => {
                 console.log(res.data.results[0])
                 const n1 = res.data.results[0].AllStuck;

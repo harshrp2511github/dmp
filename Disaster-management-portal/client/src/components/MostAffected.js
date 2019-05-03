@@ -6,6 +6,7 @@ import AnimatedNumber from 'react-animated-number';
 
 class MostAffected extends Component
 {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -108,7 +109,7 @@ class MostAffected extends Component
     }
 
     setallcount(){
-        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getallcount`)
+        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getallcount`, req_header)
             .then(res => {
                 console.log(res.data.results[0])
                 const n1 = res.data.results[0].FireStuck;
