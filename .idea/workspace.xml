@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de5a4c92-4f7b-46b4-b102-523373a92401" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Disaster-management-portal/client/src/components/Food.js" beforeDir="false" afterPath="$PROJECT_DIR$/Disaster-management-portal/client/src/components/Food.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Disaster-management-portal/client/src/components/Medical.js" beforeDir="false" afterPath="$PROJECT_DIR$/Disaster-management-portal/client/src/components/Medical.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Disaster-management-portal/client/src/components/MostAffected.js" beforeDir="false" afterPath="$PROJECT_DIR$/Disaster-management-portal/client/src/components/MostAffected.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Disaster-management-portal/client/src/components/Shelter.js" beforeDir="false" afterPath="$PROJECT_DIR$/Disaster-management-portal/client/src/components/Shelter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Disaster-management-portal/server/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Disaster-management-portal/server/routes/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -67,7 +64,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Disaster-management-portal/client/src/components/Medical.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1829">
@@ -75,6 +72,15 @@
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Disaster-management-portal/server/routes/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="157">
+              <caret line="219" lean-forward="true" selection-start-line="219" selection-end-line="219" />
             </state>
           </provider>
         </entry>
@@ -99,7 +105,6 @@
         <option value="$PROJECT_DIR$/Disaster-management-portal/client/src/components/Medicine.js" />
         <option value="$PROJECT_DIR$/Disaster-management-portal/client/src/components/RouterPage.js" />
         <option value="$PROJECT_DIR$/Disaster-management-portal/client/src/components/Fire.js" />
-        <option value="$PROJECT_DIR$/Disaster-management-portal/server/routes/index.js" />
         <option value="$PROJECT_DIR$/Disaster-management-portal/client/src/components/design.css" />
         <option value="$PROJECT_DIR$/Disaster-management-portal/server/app.js" />
         <option value="$PROJECT_DIR$/Disaster-management-portal/client/src/components/Home.js" />
@@ -107,6 +112,7 @@
         <option value="$PROJECT_DIR$/Disaster-management-portal/client/src/components/Food.js" />
         <option value="$PROJECT_DIR$/Disaster-management-portal/client/src/components/Shelter.js" />
         <option value="$PROJECT_DIR$/Disaster-management-portal/client/src/components/Medical.js" />
+        <option value="$PROJECT_DIR$/Disaster-management-portal/server/routes/index.js" />
       </list>
     </option>
   </component>
@@ -220,12 +226,12 @@
       <workItem from="1556746980373" duration="911000" />
       <workItem from="1556757878185" duration="1865000" />
       <workItem from="1556842135627" duration="3504000" />
-      <workItem from="1556899977514" duration="7879000" />
+      <workItem from="1556899977514" duration="9155000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50227000" />
+    <option name="totallyTimeSpent" value="51503000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -303,13 +309,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Disaster-management-portal/server/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="23" lean-forward="true" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Disaster-management-portal/server/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -365,6 +364,13 @@
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Disaster-management-portal/server/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="219" lean-forward="true" selection-start-line="219" selection-end-line="219" />
         </state>
       </provider>
     </entry>
