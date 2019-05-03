@@ -235,4 +235,3 @@ class Medical extends Component
     }
 }
 export default withRouter(Medical)
-

@@ -1,17 +1,18 @@
 var express = require('express');
 var router = express.Router();
 var assert = require('assert');
-var url = 'mongodb://admin:admin12345@ds149146.mlab.com:49146/dmp';
+//var url = 'mongodb://admin:admin12345@ds149146.mlab.com:49146/dmp';
+var url = 'mongodb://ec2-18-220-183-234.us-east-2.compute.amazonaws.com:27017/test'
 var MongoClient = require('mongodb').MongoClient;
 
     router.get('/getfirecount', (req, res) => {
     MongoClient.connect(
-        url,
+        url, { useNewUrlParser: true },
         (err, client) => {
             assert.equal(null, err);
             console.log('Connected successfully to server');
 
-            const db = client.db('dmp');
+            const db = client.db('test');
 
             db.collection('FireCount')
                 .find()
@@ -32,12 +33,12 @@ var MongoClient = require('mongodb').MongoClient;
 
 router.get('/getfiredata', (req, res) => {
     MongoClient.connect(
-        url,
+        url, { useNewUrlParser: true },
         (err, client) => {
             assert.equal(null, err);
             console.log('Connected successfully to server');
 
-            const db = client.db('dmp');
+            const db = client.db('test');
 
             db.collection('FireData')
                 .find()
@@ -57,12 +58,12 @@ router.get('/getfiredata', (req, res) => {
 
 router.get('/getfoodcount', (req, res) => {
     MongoClient.connect(
-        url,
+        url, { useNewUrlParser: true },
         (err, client) => {
             assert.equal(null, err);
             console.log('Connected successfully to server');
 
-            const db = client.db('dmp');
+            const db = client.db('test');
 
             db.collection('FoodCount')
                 .find()
@@ -83,12 +84,12 @@ router.get('/getfoodcount', (req, res) => {
 
 router.get('/getfooddata', (req, res) => {
     MongoClient.connect(
-        url,
+        url, { useNewUrlParser: true },
         (err, client) => {
             assert.equal(null, err);
             console.log('Connected successfully to server');
 
-            const db = client.db('dmp');
+            const db = client.db('test');
 
             db.collection('FoodData')
                 .find()
@@ -109,12 +110,12 @@ router.get('/getfooddata', (req, res) => {
 
 router.get('/getmedicalcount', (req, res) => {
     MongoClient.connect(
-        url,
+        url, { useNewUrlParser: true },
         (err, client) => {
             assert.equal(null, err);
             console.log('Connected successfully to server');
 
-            const db = client.db('dmp');
+            const db = client.db('test');
 
             db.collection('MedicalCount')
                 .find()
@@ -135,12 +136,12 @@ router.get('/getmedicalcount', (req, res) => {
 
 router.get('/getmedicaldata', (req, res) => {
     MongoClient.connect(
-        url,
+        url, { useNewUrlParser: true },
         (err, client) => {
             assert.equal(null, err);
             console.log('Connected successfully to server');
 
-            const db = client.db('dmp');
+            const db = client.db('test');
 
             db.collection('MedicalData')
                 .find()
@@ -161,12 +162,12 @@ router.get('/getmedicaldata', (req, res) => {
 
 router.get('/getsheltercount', (req, res) => {
     MongoClient.connect(
-        url,
+        url, { useNewUrlParser: true },
         (err, client) => {
             assert.equal(null, err);
             console.log('Connected successfully to server');
 
-            const db = client.db('dmp');
+            const db = client.db('test');
 
             db.collection('ShelterCount')
                 .find()
@@ -187,12 +188,12 @@ router.get('/getsheltercount', (req, res) => {
 
 router.get('/getshelterdata', (req, res) => {
     MongoClient.connect(
-        url,
+        url, { useNewUrlParser: true },
         (err, client) => {
             assert.equal(null, err);
             console.log('Connected successfully to server');
 
-            const db = client.db('dmp');
+            const db = client.db('test');
 
             db.collection('ShelterData')
                 .find()
@@ -212,12 +213,12 @@ router.get('/getshelterdata', (req, res) => {
 
 router.get('/getallcount', (req, res) => {
     MongoClient.connect(
-        url,
+        url, { useNewUrlParser: true },
         (err, client) => {
             assert.equal(null, err);
             console.log('Connected successfully to server');
 
-            const db = client.db('dmp');
+            const db = client.db('test');
 
             db.collection('AllCount')
                 .find()

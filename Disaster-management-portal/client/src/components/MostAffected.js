@@ -127,12 +127,16 @@ class MostAffected extends Component
         return this.state.firedatas.map((firedata) => {
             if(firedata.source == "twitter") {
                 return (
-                    <div className="each-live-twitter" >
 
-                        <p><b>Message: {firedata.message}</b></p>
-                        <p><b>Location: {firedata.location}</b></p>
-                        <p><b>Date: {firedata.date}</b></p>
-                        <p><b>Category: {firedata.category}</b></p>
+                    <div className="each-live" >
+                        <div>
+
+                        </div>
+
+                        <div>
+
+                        </div>
+
                     </div>
                 )
             }
