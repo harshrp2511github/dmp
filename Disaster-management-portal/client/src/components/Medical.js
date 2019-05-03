@@ -34,7 +34,14 @@ class Medical extends Component
     }
 
     setmedicalcount(){
-        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getmedicalcount`)
+        const req_header = {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                credentials: 'include'
+            }
+        };
+        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getmedicalcount`, req_header)
             .then(res => {
                 const medical = res.data.results[0].data.sort(function(a, b){return b.stuck-a.stuck}).slice(0,10);
                 console.log(medical);
@@ -99,7 +106,14 @@ class Medical extends Component
     }
 
     setmedicaldata(){
-        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getmedicaldata`)
+        const req_header = {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                credentials: 'include'
+            }
+        };
+        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getmedicaldata`, req_header)
             .then(res => {
                 this.setState({
                     medicaldatas: res.data.results
@@ -108,7 +122,14 @@ class Medical extends Component
     }
 
     setallcount(){
-        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getallcount`)
+        const req_header = {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                credentials: 'include'
+            }
+        };
+        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getallcount`, req_header)
             .then(res => {
                 console.log(res.data.results[0])
                 const n1 = res.data.results[0].MedicalStuck;

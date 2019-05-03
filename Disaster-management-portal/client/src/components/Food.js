@@ -34,7 +34,14 @@ class Food extends Component
     }
 
     setfoodcount(){
-        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getfoodcount`)
+        const req_header = {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                credentials: 'include'
+            }
+        };
+        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getfoodcount`, req_header)
             .then(res => {
                 const food = res.data.results[0].data.sort(function(a, b){return b.stuck-a.stuck}).slice(0,10);
                 console.log(food);
@@ -99,7 +106,14 @@ class Food extends Component
     }
 
     setfooddata(){
-        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getfooddata`)
+        const req_header = {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                credentials: 'include'
+            }
+        };
+        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getfooddata`, req_header)
             .then(res => {
                 this.setState({
                     fooddatas: res.data.results
@@ -108,7 +122,14 @@ class Food extends Component
     }
 
     setallcount(){
-        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getallcount`)
+        const req_header = {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                credentials: 'include'
+            }
+        };
+        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getallcount`, req_header)
             .then(res => {
                 console.log(res.data.results[0])
                 const n1 = res.data.results[0].FoodStuck;

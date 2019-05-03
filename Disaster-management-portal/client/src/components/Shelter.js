@@ -34,7 +34,14 @@ class Shelter extends Component
     }
 
     setsheltercount(){
-        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getsheltercount`)
+        const req_header = {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                credentials: 'include'
+            }
+        };
+        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getsheltercount`, req_header)
             .then(res => {
                 const shelter = res.data.results[0].data.sort(function(a, b){return b.stuck-a.stuck}).slice(0,10);
                 console.log(shelter);
@@ -99,7 +106,14 @@ class Shelter extends Component
     }
 
     setshelterdata(){
-        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getshelterdata`)
+        const req_header = {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                credentials: 'include'
+            }
+        };
+        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getshelterdata`, req_header)
             .then(res => {
                 this.setState({
                     shelterdatas: res.data.results
@@ -108,7 +122,14 @@ class Shelter extends Component
     }
 
     setallcount(){
-        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getallcount`)
+        const req_header = {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                credentials: 'include'
+            }
+        };
+        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getallcount`, req_header)
             .then(res => {
                 console.log(res.data.results[0])
                 const n1 = res.data.results[0].ShelterStuck;

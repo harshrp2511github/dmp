@@ -35,7 +35,14 @@ class MostAffected extends Component
     }
 
     setfirecount(){
-        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getfirecount`)
+        const req_header = {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                credentials: 'include'
+            }
+        };
+        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getfirecount`, req_header)
             .then(res => {
                 const fire = res.data.results[0].data.sort(function(a, b){return b.stuck-a.stuck}).slice(0,10);
                 console.log(fire);
@@ -100,7 +107,14 @@ class MostAffected extends Component
     }
 
     setfiredata(){
-        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getfiredata`)
+        const req_header = {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                credentials: 'include'
+            }
+        };
+        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getfiredata`, req_header)
             .then(res => {
                 this.setState({
                     firedatas: res.data.results
@@ -109,7 +123,14 @@ class MostAffected extends Component
     }
 
     setallcount(){
-        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getallcount`)
+        const req_header = {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                credentials: 'include'
+            }
+        };
+        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getallcount`, req_header)
             .then(res => {
                 console.log(res.data.results[0])
                 const n1 = res.data.results[0].FireStuck;
