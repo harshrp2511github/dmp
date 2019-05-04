@@ -3,6 +3,9 @@ import {Link, withRouter} from 'react-router-dom';
 import {Bar} from 'react-chartjs-2';
 import axios from 'axios';
 import AnimatedNumber from 'react-animated-number';
+import facebook from './../photos/facebook.png';
+import twitter from './../photos/twitter.jpg';
+import helpline from './../photos/helpline.jpg'
 
 class Medical extends Component
 {
@@ -44,7 +47,7 @@ class Medical extends Component
         axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getmedicalcount`, req_header)
             .then(res => {
                 const medical = res.data.results[0].data.sort(function(a, b){return b.stuck-a.stuck}).slice(0,10);
-                console.log(medical);
+                //console.log(medical);
                 let city = [];
                 let stuck = [];
                 let rescued = [];
@@ -115,6 +118,7 @@ class Medical extends Component
         };
         axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getmedicaldata`, req_header)
             .then(res => {
+                console.log(res.data.results)
                 this.setState({
                     medicaldatas: res.data.results
                 })
@@ -148,44 +152,64 @@ class Medical extends Component
 
     renderData(){
         return this.state.medicaldatas.map((medicaldata) => {
-                if(medicaldata.source == "twitter") {
-                    return (
-                        <div className="each-live-twitter" >
+                    if(medicaldata.source == "twitter") {
+                        return (
+                            <div>
+                                <div className="card-body" style={{
+                                    width: "92%",
+                                    margin: "4%",
+                                    backgroundColor: "white",
+                                    borderRadius: "5%",
+                                    paddingBottom: "2%"
+                                }}>
+                                    <img className="card-body" src={twitter} style={{width: "100%", height: "100px",float: "left", marginBottom: "2%", borderRadius: "5% 5% 0 0"}}/>
+                                    <h5 className="card-title" style={{width: "100%", textAlign: "left", marginLeft: "2%", marginTop: "2%"}}>Location: {medicaldata.location} </h5>
+                                    <p className="card-text" style={{width: "100%", textAlign: "left", marginLeft: "2%"}}>Message: {medicaldata.message}</p>
+                                </div>
+                            </div>
+                        )
+                    }
+                    else if(medicaldata.source == "fb"){
+                        return (
+                            <div>
+                                <div className="card-body" style={{
+                                    width: "92%",
+                                    margin: "4%",
+                                    backgroundColor: "white",
+                                    borderRadius: "5%",
+                                    paddingBottom: "2%"
+                                }}>
+                                    <img className="card-body" src={facebook} style={{width: "100%", height: "100px",float: "left", marginBottom: "2%", borderRadius: "5% 5% 0 0"}}/>
+                                    <h5 className="card-title" style={{width: "100%", textAlign: "left", marginLeft: "2%", marginTop: "2%"}}>Location: {medicaldata.location} </h5>
+                                    <p className="card-text" style={{width: "100%", textAlign: "left", marginLeft: "2%"}}>Message: {medicaldata.message}</p>
+                                </div>
+                            </div>
+                        )
+                    }
+                    else{
+                        return (
+                            <div>
+                                <div className="card-body" style={{
+                                    width: "92%",
+                                    margin: "4%",
+                                    backgroundColor: "white",
+                                    borderRadius: "5%",
+                                    paddingBottom: "2%"
+                                }}>
+                                    <img className="card-body" src={helpline} style={{width: "100%", height: "100px",float: "left", marginBottom: "2%", borderRadius: "5% 5% 0 0"}}/>
+                                    <h5 className="card-title" style={{width: "100%", textAlign: "left", marginLeft: "2%", marginTop: "2%"}}>Location: {medicaldata.location} </h5>
+                                    <p className="card-text" style={{width: "100%", textAlign: "left", marginLeft: "2%"}}>Message: {medicaldata.message}</p>
+                                </div>
+                            </div>
+                        )
+                    }
 
-                            <p><b>Message: {medicaldata.message}</b></p>
-                            <p><b>Location: {medicaldata.location}</b></p>
-                            <p><b>Date: {medicaldata.date}</b></p>
-                            <p><b>Category: {medicaldata.category}</b></p>
-                        </div>
+                    }
                     )
                 }
 
-                else if(medicaldata.source == "fb") {
-                    return (
-                        <div className="each-live-facebook">
-                            <p><b>Message: {medicaldata.message}</b></p>
-                            <p><b>Location: {medicaldata.location}</b></p>
-                            <p><b>Date: {medicaldata.date}</b></p>
-                            <p><b>Category: {medicaldata.category}</b></p>
-                        </div>
-                    )
-                }
 
-                else{
-                    return (
-                        <div className="each-live-helpline">
-                            <p><b>Message: {medicaldata.message}</b></p>
-                            <p><b>Location: {medicaldata.location}</b></p>
-                            <p><b>Date: {medicaldata.date}</b></p>
-                            <p><b>Category: {medicaldata.category}</b></p>
-                        </div>
-                    )
-                }
 
-            }
-
-        )
-    }
 
     render()
     {

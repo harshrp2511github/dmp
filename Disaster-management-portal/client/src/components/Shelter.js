@@ -3,6 +3,10 @@ import {Link, withRouter} from 'react-router-dom';
 import {Bar} from 'react-chartjs-2';
 import axios from 'axios';
 import AnimatedNumber from 'react-animated-number';
+import facebook from './../photos/facebook.png';
+import twitter from './../photos/twitter.jpg';
+import helpline from './../photos/helpline.jpg'
+
 
 class Shelter extends Component
 {
@@ -148,43 +152,59 @@ class Shelter extends Component
         return this.state.shelterdatas.map((shelterdata) => {
                 if(shelterdata.source == "twitter") {
                     return (
-                        <div className="each-live-twitter" >
-
-                            <p><b>Message: {shelterdata.message}</b></p>
-                            <p><b>Location: {shelterdata.location}</b></p>
-                            <p><b>Date: {shelterdata.date}</b></p>
-                            <p><b>Category: {shelterdata.category}</b></p>
+                        <div>
+                            <div className="card-body" style={{
+                                width: "92%",
+                                margin: "4%",
+                                backgroundColor: "white",
+                                borderRadius: "5%",
+                                paddingBottom: "2%"
+                            }}>
+                                <img className="card-body" src={twitter} style={{width: "100%", height: "100px",float: "left", marginBottom: "2%", borderRadius: "5% 5% 0 0"}}/>
+                                <h5 className="card-title" style={{width: "100%", textAlign: "left", marginLeft: "2%", marginTop: "2%"}}>Location: {shelterdata.location} </h5>
+                                <p className="card-text" style={{width: "100%", textAlign: "left", marginLeft: "2%"}}>Message: {shelterdata.message}</p>
+                            </div>
                         </div>
                     )
                 }
-
                 else if(shelterdata.source == "fb"){
                     return (
-                        <div className="each-live-facebook">
-                            <p><b>Message: {shelterdata.message}</b></p>
-                            <p><b>Location: {shelterdata.location}</b></p>
-                            <p><b>Date: {shelterdata.date}</b></p>
-                            <p><b>Category: {shelterdata.category}</b></p>
+                        <div>
+                            <div className="card-body" style={{
+                                width: "92%",
+                                margin: "4%",
+                                backgroundColor: "white",
+                                borderRadius: "5%",
+                                paddingBottom: "2%"
+                            }}>
+                                <img className="card-body" src={facebook} style={{width: "100%", height: "100px",float: "left", marginBottom: "2%", borderRadius: "5% 5% 0 0"}}/>
+                                <h5 className="card-title" style={{width: "100%", textAlign: "left", marginLeft: "2%", marginTop: "2%"}}>Location: {shelterdata.location} </h5>
+                                <p className="card-text" style={{width: "100%", textAlign: "left", marginLeft: "2%"}}>Message: {shelterdata.message}</p>
+                            </div>
                         </div>
                     )
                 }
-
                 else{
                     return (
-                        <div className="each-live-helpline">
-                            <p><b>Message: {shelterdata.message}</b></p>
-                            <p><b>Location: {shelterdata.location}</b></p>
-                            <p><b>Date: {shelterdata.date}</b></p>
-                            <p><b>Category: {shelterdata.category}</b></p>
+                        <div>
+                            <div className="card-body" style={{
+                                width: "92%",
+                                margin: "4%",
+                                backgroundColor: "white",
+                                borderRadius: "5%",
+                                paddingBottom: "2%"
+                            }}>
+                                <img className="card-body" src={helpline} style={{width: "100%", height: "100px",float: "left", marginBottom: "2%", borderRadius: "5% 5% 0 0"}}/>
+                                <h5 className="card-title" style={{width: "100%", textAlign: "left", marginLeft: "2%", marginTop: "2%"}}>Location: {shelterdata.location} </h5>
+                                <p className="card-text" style={{width: "100%", textAlign: "left", marginLeft: "2%"}}>Message: {shelterdata.message}</p>
+                            </div>
                         </div>
                     )
                 }
 
             }
-
         )
     }
-
     render()
     {
         return(

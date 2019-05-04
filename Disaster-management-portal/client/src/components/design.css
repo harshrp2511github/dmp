@@ -139,13 +139,37 @@ li a:hover {
 .right-feed {
     float: right;
     position: relative;
-    background-color: #c9c9c9;
-    width: 20%;
+    background-color: #dbdbdb;
+    width: 18.5%;
     height: 500px;
     margin-top: -33.5%;
-    margin-right: 2%;
+    margin-right: 2.75%;
     overflow-y: scroll;
     box-shadow: 4px 4px 4px #b2b2b2;
+}
+
+.each-live {
+    height: 100px;
+    width: 96%;
+    margin: 2%;
+    background-color: white;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px #efefef;
+}
+
+.each-live-left {
+    float: left;
+    width: 32.5%;
+    height: 100%;
+    background-image: url("./../photos/facebook.png");
+    background-size: 100% 100%;
+}
+
+.each-live-right {
+    float: left;
+    width: 67%;
+    height: 100%;
+    overflow-wrap: break-word;
+    font-size: 12.5px;
 }
 
 .each-live-twitter {
