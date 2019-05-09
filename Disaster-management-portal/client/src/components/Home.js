@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import Navigation from './Navigation';
 //import fire from './../photos/fire.png'
-import flood from './../photos/flood.jpg'
+import flood from './../photos/flood.png'
+import fire from './../photos/fire.png'
+import cyclone from './../photos/cyclone.png'
+import hurricane from './../photos/hurricane.png'
 import axios from "axios";
 import AnimatedNumber from 'react-animated-number';
 
@@ -51,34 +54,35 @@ class Home extends  Component{
         return(
             <div>
                 <Navigation />
-                <Link to="/fire"><div className="boxes"><h4 className="box-text">
+                <Link to="/fire" className="redBorder"><div className="boxes-fire"><h4 className="box-text">
                     FIRE<br/>
 
-                        <img src={flood} style={{ margin: "15px", height: "80px"}}/>
+                        <img src={fire} style={{ margin: "15px", height: "80px"}}/>
 
 
                 </h4></div></Link>
-                <Link><div className="boxes"><h4 className="box-text">
+                <Link><div className="boxes-flood"><h4 className="box-text">
                     FLOOD<br/>
 
                     <img src={flood} style={{ margin: "15px", height: "80px"}}/>
 
                 </h4></div></Link>
-                <Link><div className="boxes"><h4 className="box-text">
+                <Link><div className="boxes-cyclone"><h4 className="box-text">
                     CYCLONE<br/>
 
-                    <img src={flood} style={{ margin: "15px", height: "80px"}}/>
+                    <img src={cyclone} style={{ margin: "15px", height: "80px"}}/>
 
                 </h4></div></Link>
-                <Link><div className="boxes"><h4 className="box-text">
+                <Link><div className="boxes-hurricane "><h4 className="box-text">
                     HURRICANE<br/>
 
-                    <img src={flood} style={{ margin: "15px", height: "80px"}}/>
+                    <img src={hurricane} style={{ margin: "15px", height: "80px"}}/>
 
                 </h4></div></Link>
                 <div className="home-counter">
+                <h1 className="top20" style={{ color: "grey"}}><b>Live Count</b></h1>
                     <div className="home-update">
-                        <h4><b>TOTAL-CASES OVERALL:</b></h4>
+                        <h4><b>TOTAL CASES</b></h4>
                         <h3><b>
                             <AnimatedNumber component="text" value={this.state.stuck}
                                             style={{
@@ -88,14 +92,14 @@ class Home extends  Component{
                                                     'background-color, color, opacity'
                                             }}
                                             frameStyle={perc => (
-                                                perc === 100 ? {} : {backgroundColor: '#8424c9'}
+                                                perc === 100 ? {} : {backgroundColor: '#ef6958'}
                                             )}
 
                                             />
                         </b></h3>
                     </div>
                     <div className="home-update">
-                        <h4><b>TOTAL-CASES RESOLVED:</b></h4>
+                        <h4><b>RESOLVED</b></h4>
                         <h3><b>
                             <AnimatedNumber component="text" value={this.state.rescued}
                                             style={{
@@ -105,7 +109,7 @@ class Home extends  Component{
                                                     'background-color, color, opacity'
                                             }}
                                             frameStyle={perc => (
-                                                perc === 100 ? {} : {backgroundColor: '#8424c9'}
+                                                perc === 100 ? {} : {backgroundColor: '#ef6958'}
                                             )}
 
                             />
@@ -113,11 +117,11 @@ class Home extends  Component{
                     </div>
 
                 </div>
+                <div class="clearfix"> </div>
                 <div className="message">
-                    <h1 style={{ color: "#0b0023"}}><b>HELP YOUR CITY!</b></h1>
-                    <h2 style={{ color: "#8424c9"}}><b>TWEET ON TWITTER/ POST ON FACEBOOK/ CALL OUR TOLL FREE NO: 999 999-9999</b></h2>
+                    <h2 style={{ color: "grey"}}><b>TWEET / POST ON FACEBOOK/ CALL OUR TOLL FREE NO: 999 999-9999</b></h2>
                     <br/><br/>
-                    <p><b>Help us Help you. Post on Facebook, tweet on twitter or call our helpline number to register the disaster. We will
+                    <p><b>We will
                         reach necessary authorities to help you</b></p>
 
                 </div>

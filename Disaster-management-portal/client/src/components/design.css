@@ -29,11 +29,13 @@ li a:hover {
 }
 
 .support {
-    position: relative;
-    border: 2px solid;
     height: 250px;
+    background: #8fd8f1;
 }
 
+.redBorder {
+
+}
 
 
 .boxes {
@@ -42,10 +44,56 @@ li a:hover {
     margin-left: 12%;
     height : 150px;
     width: 150px;
-    border: 1px solid;
+    border: 1px solid #c92424;
     background-color: #8424c9;
     margin-top: -3.5%;
 }
+
+.boxes-fire {
+    position: relative;
+    float: left;
+    margin-left: 12%;
+    height : 150px;
+    width: 150px;
+    border: 1px solid #c92424;
+    background-color: #c92424;
+    margin-top: -3.5%;
+}
+
+.boxes-flood {
+    position: relative;
+    float: left;
+    margin-left: 12%;
+    height : 150px;
+    width: 150px;
+    border: 1px solid #336eda;
+    background-color: #336eda;
+    margin-top: -3.5%;
+}
+
+
+.boxes-cyclone {
+    position: relative;
+    float: left;
+    margin-left: 12%;
+    height : 150px;
+    width: 150px;
+    border: 1px solid #c5c5c5;
+    background-color: #c5c5c5;
+    margin-top: -3.5%;
+}
+
+.boxes-hurricane {
+    position: relative;
+    float: left;
+    margin-left: 12%;
+    height : 150px;
+    width: 150px;
+    border: 1px solid #ad4c07;
+    background-color: #ad4c07;
+    margin-top: -3.5%;
+}
+
 
 .boxes-1 {
     position: relative;
@@ -58,15 +106,21 @@ li a:hover {
     margin-top: -3.5%;
 }
 
+.links {
+    font-family: monospace;
+    font-size: 19px;
+}
+
 .box-text {
     color: white;
 }
 
 .heading{
     color: white;
-    margin-left: 350px;
-    margin-top: 5px;
+    margin-left: 300px;
+    margin-top: 10px;
     font-size: 25px;
+    font-family: monospace;
 }
 
 .message{
@@ -219,6 +273,10 @@ li a:hover {
     height: 125px;
 }
 
+.top20 {
+    padding-top: 30px;
+}
+
 .update-1 {
     float: right;
     height: 125px;
@@ -227,7 +285,7 @@ li a:hover {
     margin-right: 40px;
     background: #8424c9;
     color: white;
-    box-shadow: 4px 4px 4px #731cb2;
+    box-shadow: 4px 4px 4px #ef6958;
 }
 
 
@@ -245,7 +303,7 @@ li a:hover {
     width: 125px;
     margin-left: 87px;
     margin-top: 25px;
-    background: #8424c9;
+    background: #ef6958;
     color: white;
-    box-shadow: 4px 4px 4px #731cb2;
+    box-shadow: 4px 4px 4px #ef6958;
 }
