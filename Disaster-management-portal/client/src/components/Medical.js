@@ -173,7 +173,7 @@ class Medical extends Component
                             </div>
                         )
                     }
-                    else if(medicaldata.source == "fb"){
+                    else if(medicaldata.source == "facebook"){
                         return (
                             <div>
                                 <div className="card-body" style={{

@@ -169,7 +169,7 @@ class Shelter extends Component
                         </div>
                     )
                 }
-                else if(shelterdata.source == "fb"){
+                else if(shelterdata.source == "facebook"){
                     return (
                         <div>
                             <div className="card-body" style={{

@@ -169,7 +169,7 @@ class Food extends Component
                         </div>
                     )
                 }
-                else if(fooddata.source == "fb"){
+                else if(fooddata.source == "facebook"){
                     return (
                         <div>
                             <div className="card-body" style={{

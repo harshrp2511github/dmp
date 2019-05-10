@@ -173,7 +173,7 @@ class MostAffected extends Component
                         </div>
                     )
                 }
-                else if(firedata.source == "fb"){
+                else if(firedata.source == "facebook"){
                     return (
                         <div key={firedata.id}>
                             <div className="card-body" style={{
