@@ -54,9 +54,9 @@ class Medical extends Component
                 let stuck = [];
                 let rescued = [];
                 medical.forEach(element => {
-                    city.push(element.city);
-                    stuck.push(element.stuck);
-                    rescued.push(element.rescued);
+                    city.push(element.data[0].city);
+                    stuck.push(element.data[0].stuck);
+                    rescued.push(element.data[0].rescued);
                 });
                 this.setState({
                     Data: {
