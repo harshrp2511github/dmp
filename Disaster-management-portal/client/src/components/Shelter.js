@@ -122,7 +122,7 @@ class Shelter extends Component
         axios.get(config.url+'getshelterdata', req_header)
             .then(res => {
                 this.setState({
-                    shelterdatas: res.data.results.reverse()
+                    shelterdatas: res.data.results.reverse().slice(0,10)
                 })
             })
     }

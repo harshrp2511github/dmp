@@ -126,7 +126,7 @@ class MostAffected extends Component
         axios.get(config.url+'getfiredata', req_header)
             .then(res => {
                 this.setState({
-                    firedatas: res.data.results.reverse()
+                    firedatas: res.data.results.reverse().slice(0,10)
                 })
             })
     }

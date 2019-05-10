@@ -122,7 +122,7 @@ class Food extends Component
         axios.get(config.url+'getfooddata', req_header)
             .then(res => {
                 this.setState({
-                    fooddatas: res.data.results.reverse()
+                    fooddatas: res.data.results.reverse().slice(0,10)
                 })
             })
     }

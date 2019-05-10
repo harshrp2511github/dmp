@@ -124,7 +124,7 @@ class Medical extends Component
             .then(res => {
                 //console.log(res.data.results)
                 this.setState({
-                    medicaldatas: res.data.results.reverse()
+                    medicaldatas: res.data.results.reverse().slice(0,10)
                 })
             })
     }
