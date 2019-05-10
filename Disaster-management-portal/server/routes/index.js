@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var assert = require('assert');
 //var url = 'mongodb://admin:admin12345@ds149146.mlab.com:49146/dmp';
-var url = 'mongodb://ec2-18-191-49-56.us-east-2.compute.amazonaws.com:27017/test'
+var url = 'mongodb://ec2-18-222-41-5.us-east-2.compute.amazonaws.com:27017/test'
 var MongoClient = require('mongodb').MongoClient;
 
     router.get('/getfirecount', (req, res) => {
