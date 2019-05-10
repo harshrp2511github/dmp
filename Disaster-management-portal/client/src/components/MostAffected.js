@@ -126,7 +126,7 @@ class MostAffected extends Component
         axios.get(config.url+'getfiredata', req_header)
             .then(res => {
                 this.setState({
-                    firedatas: res.data.results
+                    firedatas: res.data.results.reverse()
                 })
             })
     }
@@ -257,12 +257,34 @@ class MostAffected extends Component
                 <div className="graph1">
                     <Bar
                         data = {this.state.Data}
-                        options = {{ maintainAspectRatio: false }} />
+                        options = {{
+                            maintainAspectRatio: false,
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        min: 0
+                                    }
+                                }]
+                            }
+
+
+                        }} />
                 </div>
                 <div className="graph2">
                     <Bar
                         data = {this.state.Data1}
-                        options = {{ maintainAspectRatio: false }} />
+                        options = {{
+                            maintainAspectRatio: false,
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        min: 0
+                                    }
+                                }]
+                            }
+
+
+                        }} />
                 </div>
                 <div className="right-feed">
                     <h4 style={{ color: "#8424c9"}}><b>LIVE FEED</b></h4>

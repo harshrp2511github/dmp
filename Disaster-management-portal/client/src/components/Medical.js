@@ -124,7 +124,7 @@ class Medical extends Component
             .then(res => {
                 //console.log(res.data.results)
                 this.setState({
-                    medicaldatas: res.data.results
+                    medicaldatas: res.data.results.reverse()
                 })
             })
     }
@@ -258,12 +258,34 @@ class Medical extends Component
                 <div className="graph1">
                     <Bar
                         data = {this.state.Data}
-                        options = {{ maintainAspectRatio: false }} />
+                        options = {{
+                            maintainAspectRatio: false,
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        min: 0
+                                    }
+                                }]
+                            }
+
+
+                        }} />
                 </div>
                 <div className="graph2">
                     <Bar
                         data = {this.state.Data1}
-                        options = {{ maintainAspectRatio: false }} />
+                        options = {{
+                            maintainAspectRatio: false,
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        min: 0
+                                    }
+                                }]
+                            }
+
+
+                        }} />
                 </div>
                 <div className="right-feed">
                     <h4 style={{ color: "#8424c9"}}><b>LIVE FEED</b></h4>

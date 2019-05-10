@@ -93,7 +93,7 @@ router.get('/getfooddata', (req, res) => {
             const db = client.db('test');
 
             db.collection('FoodData')
-                .find()
+                .find().sort()
                 .toArray((err, result) => {
                     if (err) throw err;
                     client.close();

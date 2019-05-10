@@ -122,7 +122,7 @@ class Shelter extends Component
         axios.get(config.url+'getshelterdata', req_header)
             .then(res => {
                 this.setState({
-                    shelterdatas: res.data.results
+                    shelterdatas: res.data.results.reverse()
                 })
             })
     }
@@ -250,12 +250,34 @@ class Shelter extends Component
                 <div className="graph1">
                     <Bar
                         data = {this.state.Data}
-                        options = {{ maintainAspectRatio: false }} />
+                        options = {{
+                            maintainAspectRatio: false,
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        min: 0
+                                    }
+                                }]
+                            }
+
+
+                        }} />
                 </div>
                 <div className="graph2">
                     <Bar
                         data = {this.state.Data1}
-                        options = {{ maintainAspectRatio: false }} />
+                        options = {{
+                            maintainAspectRatio: false,
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        min: 0
+                                    }
+                                }]
+                            }
+
+
+                        }} />
                 </div>
                 <div className="right-feed">
                     <h4 style={{ color: "#8424c9"}}><b>LIVE FEED</b></h4>
