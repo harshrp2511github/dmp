@@ -19,14 +19,13 @@ var MongoClient = require('mongodb').MongoClient;
                 .find().sort({_id: -1}).limit(1)
                 .toArray((err, result) => {
                     if (err) throw err;
-
+                    client.close();
                     res.status(201).json({
                         status: 'true',
                         results: result
                     });
                 });
 
-            client.close();
         }
     );
 });
@@ -46,14 +45,14 @@ router.get('/getfiredata', (req, res) => {
                 .find()
                 .toArray((err, result) => {
                     if (err) throw err;
-
+                    client.close();
                     res.status(201).json({
                         status: 'true',
                         results: result
                     });
                 });
 
-            client.close();
+            
         }
     );
 });
@@ -72,14 +71,12 @@ router.get('/getfoodcount', (req, res) => {
                 .find().sort({_id: -1}).limit(1)
                 .toArray((err, result) => {
                     if (err) throw err;
-
+                    client.close();
                     res.status(201).json({
                         status: 'true',
                         results: result
                     });
                 });
-
-            client.close();
         }
     );
 });
@@ -99,14 +96,13 @@ router.get('/getfooddata', (req, res) => {
                 .find()
                 .toArray((err, result) => {
                     if (err) throw err;
-
+                    client.close();
                     res.status(201).json({
                         status: 'true',
                         results: result
                     });
                 });
 
-            client.close();
         }
     );
 });
@@ -126,14 +122,12 @@ router.get('/getmedicalcount', (req, res) => {
                 .find().sort({_id: -1}).limit(1)
                 .toArray((err, result) => {
                     if (err) throw err;
-
+                    client.close();
                     res.status(201).json({
                         status: 'true',
                         results: result
                     });
                 });
-
-            client.close();
         }
     );
 });
@@ -153,14 +147,12 @@ router.get('/getmedicaldata', (req, res) => {
                 .find()
                 .toArray((err, result) => {
                     if (err) throw err;
-
+                    client.close();
                     res.status(201).json({
                         status: 'true',
                         results: result
                     });
                 });
-
-            client.close();
         }
     );
 });
@@ -180,14 +172,13 @@ router.get('/getsheltercount', (req, res) => {
                 .find().sort({_id: -1}).limit(1)
                 .toArray((err, result) => {
                     if (err) throw err;
-
+                    client.close();
                     res.status(201).json({
                         status: 'true',
                         results: result
                     });
                 });
 
-            client.close();
         }
     );
 });
@@ -207,14 +198,12 @@ router.get('/getshelterdata', (req, res) => {
                 .find()
                 .toArray((err, result) => {
                     if (err) throw err;
-
+                    client.close();
                     res.status(201).json({
                         status: 'true',
                         results: result
                     });
                 });
-
-            client.close();
         }
     );
 });
@@ -233,14 +222,13 @@ router.get('/getallcount', (req, res) => {
                 .find().sort({_id: -1}).limit(1)
                 .toArray((err, result) => {
                     if (err) throw err;
-
+                    client.close();
                     res.status(201).json({
                         status: 'true',
                         results: result
                     });
                 });
 
-            client.close();
         }
     );
 });
