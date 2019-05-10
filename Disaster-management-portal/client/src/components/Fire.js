@@ -9,7 +9,6 @@ import medical from './../photos/medical.png'
 import shelter from './../photos/sheltericon.png'
 
 
-
 class Fire extends  Component{
     render() {
         return(

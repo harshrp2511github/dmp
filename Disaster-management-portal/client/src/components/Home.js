@@ -8,7 +8,7 @@ import cyclone from './../photos/cyclone.png'
 import hurricane from './../photos/hurricane.png'
 import axios from "axios";
 import AnimatedNumber from 'react-animated-number';
-
+const config = require('./config.json');
 
 class Home extends  Component{
     constructor(props) {
@@ -36,7 +36,7 @@ class Home extends  Component{
                 credentials: 'include'
             }
         };
-        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getallcount`, req_header)
+        axios.get(config.url+'getallcount', req_header)
             .then(res => {
                 console.log(res.data.results[0])
                 const n1 = res.data.results[0].AllStuck;

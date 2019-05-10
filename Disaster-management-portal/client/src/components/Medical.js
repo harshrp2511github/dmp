@@ -6,6 +6,7 @@ import AnimatedNumber from 'react-animated-number';
 import facebook from './../photos/facebook.png';
 import twitter from './../photos/twitter.jpg';
 import helpline from './../photos/helpline.jpg'
+const config = require('./config.json');
 
 class Medical extends Component
 {
@@ -44,7 +45,7 @@ class Medical extends Component
                 credentials: 'include'
             }
         };
-        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getmedicalcount`, req_header)
+        axios.get(config.url+`getmedicalcount`, req_header)
             .then(res => {
                 const medical = res.data.results[0].data.sort(function(a, b){return b.stuck-a.stuck}).slice(0,10);
                 //console.log(medical);
@@ -116,7 +117,7 @@ class Medical extends Component
                 credentials: 'include'
             }
         };
-        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getmedicaldata`, req_header)
+        axios.get(config.url+`getmedicaldata`, req_header)
             .then(res => {
                 console.log(res.data.results)
                 this.setState({
@@ -133,7 +134,7 @@ class Medical extends Component
                 credentials: 'include'
             }
         };
-        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getallcount`, req_header)
+        axios.get(config.url+`getallcount`, req_header)
             .then(res => {
                 console.log(res.data.results[0])
                 const n1 = res.data.results[0].MedicalStuck;

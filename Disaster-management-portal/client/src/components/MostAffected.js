@@ -6,6 +6,7 @@ import AnimatedNumber from 'react-animated-number';
 import facebook from './../photos/facebook.png';
 import twitter from './../photos/twitter.jpg';
 import helpline from './../photos/helpline.jpg'
+const config = require('./config.json');
 
 
 class MostAffected extends Component
@@ -46,7 +47,7 @@ class MostAffected extends Component
                 credentials: 'include'
             }
         };
-        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getfirecount`, req_header)
+        axios.get(config.url+'getfirecount', req_header)
             .then(res => {
                 const fire = res.data.results[0].data.sort(function(a, b){return b.stuck-a.stuck}).slice(0,10);
                 console.log(fire);
@@ -118,7 +119,7 @@ class MostAffected extends Component
                 credentials: 'include'
             }
         };
-        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getfiredata`, req_header)
+        axios.get(config.url+'getfiredata', req_header)
             .then(res => {
                 this.setState({
                     firedatas: res.data.results
@@ -134,7 +135,7 @@ class MostAffected extends Component
                 credentials: 'include'
             }
         };
-        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getallcount`, req_header)
+        axios.get(config.url+'getallcount', req_header)
             .then(res => {
                 console.log(res.data.results[0])
                 const n1 = res.data.results[0].FireStuck;

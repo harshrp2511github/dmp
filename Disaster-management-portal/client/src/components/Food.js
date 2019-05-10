@@ -6,7 +6,7 @@ import AnimatedNumber from 'react-animated-number';
 import facebook from './../photos/facebook.png';
 import twitter from './../photos/twitter.jpg';
 import helpline from './../photos/helpline.jpg'
-
+const config = require('./config.json');
 
 class Food extends Component
 {
@@ -45,7 +45,7 @@ class Food extends Component
                 credentials: 'include'
             }
         };
-        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getfoodcount`, req_header)
+        axios.get(config.url+'getfoodcount', req_header)
             .then(res => {
                 const food = res.data.results[0].data.sort(function(a, b){return b.stuck-a.stuck}).slice(0,10);
                 console.log(food);
@@ -117,7 +117,7 @@ class Food extends Component
                 credentials: 'include'
             }
         };
-        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getfooddata`, req_header)
+        axios.get(config.url+'getfooddata', req_header)
             .then(res => {
                 this.setState({
                     fooddatas: res.data.results
@@ -133,7 +133,7 @@ class Food extends Component
                 credentials: 'include'
             }
         };
-        axios.get(`http://ec2-34-218-233-42.us-west-2.compute.amazonaws.com:3001/getallcount`, req_header)
+        axios.get(config.url+'getallcount', req_header)
             .then(res => {
                 console.log(res.data.results[0])
                 const n1 = res.data.results[0].FoodStuck;
