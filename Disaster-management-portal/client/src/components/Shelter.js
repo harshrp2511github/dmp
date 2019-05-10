@@ -50,7 +50,7 @@ class Shelter extends Component
         axios.get(config.url+'getsheltercount', req_header)
             .then(res => {
                 const shelter = res.data.results[0].data.sort(function(a, b){return b.stuck-a.stuck}).slice(0,10);
-                console.log(shelter);
+                //console.log(shelter);
                 let city = [];
                 let stuck = [];
                 let rescued = [];
@@ -137,7 +137,7 @@ class Shelter extends Component
         };
         axios.get(config.url+'getallcount', req_header)
             .then(res => {
-                console.log(res.data.results[0])
+                //console.log(res.data.results[0])
                 const n1 = res.data.results[0].ShelterStuck;
                 const n2 = res.data.results[0].ShelterRescued;
 
@@ -215,7 +215,7 @@ class Shelter extends Component
                 <ul>
                     <li><Link to="/" className="active"  >Home</Link></li>
                     <li><Link to="/fire" >Fire-Events</Link></li>
-                    <li><Link >Contact</Link></li>
+                    <li><Link to="">Contact</Link></li>
                     <li className="heading">DISASTER MANAGEMENT PORTAL</li>
                 </ul>
                 <br />

@@ -50,7 +50,7 @@ class Food extends Component
         axios.get(config.url+'getfoodcount', req_header)
             .then(res => {
                 const food = res.data.results[0].data.sort(function(a, b){return b.stuck-a.stuck}).slice(0,10);
-                console.log(food);
+                //console.log(food);
                 let city = [];
                 let stuck = [];
                 let rescued = [];
@@ -137,7 +137,7 @@ class Food extends Component
         };
         axios.get(config.url+'getallcount', req_header)
             .then(res => {
-                console.log(res.data.results[0])
+                //console.log(res.data.results[0])
                 const n1 = res.data.results[0].FoodStuck;
                 const n2 = res.data.results[0].FoodRescued;
 
@@ -216,7 +216,7 @@ class Food extends Component
                 <ul>
                     <li><Link to="/" className="active"  >Home</Link></li>
                     <li><Link to="/fire" >Fire-Events</Link></li>
-                    <li><Link >Contact</Link></li>
+                    <li><Link to="">Contact</Link></li>
                     <li className="heading">DISASTER MANAGEMENT PORTAL</li>
                 </ul>
                 <br />

@@ -53,7 +53,8 @@ class MostAffected extends Component
         axios.get(config.url+'getfirecount', req_header)
             .then(res => {
                 const fire = res.data.results[0].data.sort(function(a, b){return b.stuck-a.stuck}).slice(0,10);
-                console.log(fire);
+                //
+                //console.log(fire);
                 let city = [];
                 let stuck = [];
                 let rescued = [];
@@ -140,7 +141,7 @@ class MostAffected extends Component
         };
         axios.get(config.url+'getallcount', req_header)
             .then(res => {
-                console.log(res.data.results[0])
+                //console.log(res.data.results[0])
                 const n1 = res.data.results[0].FireStuck;
                 const n2 = res.data.results[0].FireRescued;
 
@@ -157,51 +158,51 @@ class MostAffected extends Component
         return this.state.firedatas.map((firedata) => {
                 if(firedata.source == "twitter") {
                     return (
-                        <div>
+                        <div key={firedata.id}>
                             <div className="card-body" style={{
                                 width: "92%",
                                 margin: "4%",
                                 backgroundColor: "white",
                                 borderRadius: "5%",
                                 paddingBottom: "2%"
-                            }}>
-                                <img className="card-body" src={twitter} style={{width: "100%", height: "100px",float: "left", marginBottom: "2%", borderRadius: "5% 5% 0 0"}}/>
-                                <h5 className="card-title" style={{width: "100%", textAlign: "left", marginLeft: "2%", marginTop: "2%"}}>Location: {firedata.location} </h5>
-                                <p className="card-text" style={{width: "100%", textAlign: "left", marginLeft: "2%"}}>Message: {firedata.message}</p>
+                            }} key={firedata.id}>
+                                <img className="card-body" src={twitter} style={{width: "100%", height: "100px",float: "left", marginBottom: "2%", borderRadius: "5% 5% 0 0"}}key={firedata.id}/>
+                                <h5 className="card-title" style={{width: "100%", textAlign: "left", marginLeft: "2%", marginTop: "2%"}} key={firedata.id}>Location: {firedata.location} </h5>
+                                <p className="card-text" style={{width: "100%", textAlign: "left", marginLeft: "2%"}} key={firedata.id}>Message: {firedata.message}</p>
                             </div>
                         </div>
                     )
                 }
                 else if(firedata.source == "fb"){
                     return (
-                        <div>
+                        <div key={firedata.id}>
                             <div className="card-body" style={{
                                 width: "92%",
                                 margin: "4%",
                                 backgroundColor: "white",
                                 borderRadius: "5%",
                                 paddingBottom: "2%"
-                            }}>
-                                <img className="card-body" src={facebook} style={{width: "100%", height: "100px",float: "left", marginBottom: "2%", borderRadius: "5% 5% 0 0"}}/>
-                                <h5 className="card-title" style={{width: "100%", textAlign: "left", marginLeft: "2%", marginTop: "2%"}}>Location: {firedata.location} </h5>
-                                <p className="card-text" style={{width: "100%", textAlign: "left", marginLeft: "2%"}}>Message: {firedata.message}</p>
+                            }} key={firedata.id}>
+                                <img className="card-body" src={facebook} style={{width: "100%", height: "100px",float: "left", marginBottom: "2%", borderRadius: "5% 5% 0 0"}} key={firedata.id}/>
+                                <h5 className="card-title" style={{width: "100%", textAlign: "left", marginLeft: "2%", marginTop: "2%" }} key={firedata.id}>Location: {firedata.location} </h5>
+                                <p className="card-text" style={{width: "100%", textAlign: "left", marginLeft: "2%"}} key={firedata.id}>Message: {firedata.message}</p>
                             </div>
                         </div>
                     )
                 }
                 else{
                     return (
-                        <div>
+                        <div key={firedata.id}>
                             <div className="card-body" style={{
                                 width: "92%",
                                 margin: "4%",
                                 backgroundColor: "white",
                                 borderRadius: "5%",
                                 paddingBottom: "2%"
-                            }}>
-                                <img className="card-body" src={helpline} style={{width: "100%", height: "100px",float: "left", marginBottom: "2%", borderRadius: "5% 5% 0 0"}}/>
-                                <h5 className="card-title" style={{width: "100%", textAlign: "left", marginLeft: "2%", marginTop: "2%"}}>Location: {firedata.location} </h5>
-                                <p className="card-text" style={{width: "100%", textAlign: "left", marginLeft: "2%"}}>Message: {firedata.message}</p>
+                            }} key={firedata.id}>
+                                <img className="card-body" src={helpline} style={{width: "100%", height: "100px",float: "left", marginBottom: "2%", borderRadius: "5% 5% 0 0"}} key={firedata.id}/>
+                                <h5 className="card-title" style={{width: "100%", textAlign: "left", marginLeft: "2%", marginTop: "2%" }} key={firedata.id}>Location: {firedata.location} </h5>
+                                <p className="card-text" style={{width: "100%", textAlign: "left", marginLeft: "2%" }} key={firedata.id}>Message: {firedata.message}</p>
                             </div>
                         </div>
                     )
@@ -221,7 +222,7 @@ class MostAffected extends Component
                 <ul>
                     <li><Link to="/" className="active"  >Home</Link></li>
                     <li><Link to="/fire" >Fire-Events</Link></li>
-                    <li><Link >Contact</Link></li>
+                    <li><Link to="">Contact</Link></li>
                     <li className="heading">DISASTER MANAGEMENT PORTAL</li>
                 </ul>
                 <br />

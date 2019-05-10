@@ -122,7 +122,7 @@ class Medical extends Component
         };
         axios.get(config.url+`getmedicaldata`, req_header)
             .then(res => {
-                console.log(res.data.results)
+                //console.log(res.data.results)
                 this.setState({
                     medicaldatas: res.data.results
                 })
@@ -139,7 +139,7 @@ class Medical extends Component
         };
         axios.get(config.url+`getallcount`, req_header)
             .then(res => {
-                console.log(res.data.results[0])
+                //console.log(res.data.results[0])
                 const n1 = res.data.results[0].MedicalStuck;
                 const n2 = res.data.results[0].MedicalRescued;
 
@@ -223,7 +223,7 @@ class Medical extends Component
                 <ul>
                     <li><Link to="/" className="active"  >Home</Link></li>
                     <li><Link to="/fire" >Fire-Events</Link></li>
-                    <li><Link >Contact</Link></li>
+                    <li><Link to="" >Contact</Link></li>
                     <li className="heading">DISASTER MANAGEMENT PORTAL</li>
                 </ul>
                 <br />

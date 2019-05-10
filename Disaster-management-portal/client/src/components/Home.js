@@ -40,7 +40,7 @@ class Home extends  Component{
         };
         axios.get(config.url+'getallcount', req_header)
             .then(res => {
-                console.log(res.data.results[0])
+                //console.log(res.data.results[0])
                 const n1 = res.data.results[0].AllStuck;
                 const n2 = res.data.results[0].AllRescued;
 
@@ -63,19 +63,19 @@ class Home extends  Component{
 
 
                 </h4></div></Link>
-                <Link><div className="boxes-flood"><h4 className="box-text">
+                <Link to=""><div className="boxes-flood"><h4 className="box-text">
                     FLOOD<br/>
 
                     <img src={flood} style={{ margin: "15px", height: "80px"}}/>
 
                 </h4></div></Link>
-                <Link><div className="boxes-cyclone"><h4 className="box-text">
+                <Link to=""><div className="boxes-cyclone"><h4 className="box-text">
                     CYCLONE<br/>
 
                     <img src={cyclone} style={{ margin: "15px", height: "80px"}}/>
 
                 </h4></div></Link>
-                <Link><div className="boxes-hurricane "><h4 className="box-text">
+                <Link to=""><div className="boxes-hurricane "><h4 className="box-text">
                     HURRICANE<br/>
 
                     <img src={hurricane} style={{ margin: "15px", height: "80px"}}/>
@@ -109,7 +109,7 @@ class Home extends  Component{
                     </div>
 
                 </div>
-                <div class="clearfix"> </div>
+                <div className="clearfix"> </div>
                 <div className="message">
                     <h2 style={{ color: "grey"}}><b>TWEET / POST ON FACEBOOK/ CALL OUR TOLL FREE NO: 999 999-9999</b></h2>
                     <br/><br/>

@@ -11,7 +11,7 @@ class Navigation extends  Component{
 
                     <ul className="links">
                         <li><Link to="/" className="active"  >HOME</Link></li>
-                        <li><Link >CONTACT</Link></li>
+                        <li><Link to="">CONTACT</Link></li>
                         <li className="heading">CALIFORNIA DISASTER MANAGEMENT</li>
                     </ul>
                     <div className="support">
