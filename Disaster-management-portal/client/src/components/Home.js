@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import Navigation from './Navigation';
 //import fire from './../photos/fire.png'
+import Odometer from 'react-odometerjs';
+import 'odometer/themes/odometer-theme-default.css';
 import flood from './../photos/flood.png'
 import fire from './../photos/fire.png'
 import cyclone from './../photos/cyclone.png'
@@ -83,34 +85,24 @@ class Home extends  Component{
                 <h1 className="top20" style={{ color: "grey"}}><b>Live Count</b></h1>
                     <div className="home-update">
                         <h4><b>TOTAL CASES</b></h4>
-                        <h3><b>
-                            <AnimatedNumber component="text" value={this.state.stuck}
-                                            style={{
-                                                transition: '0.8s ease-out',
-                                                fontSize: 48,
-                                                transitionProperty:
-                                                    'background-color, color, opacity'
-                                            }}
-                                            frameStyle={perc => (
-                                                perc === 100 ? {} : {backgroundColor: '#ef6958'}
-                                            )}
+                        <h3 style={{ fontSize: "48px"}}><b>
+                            <Odometer value={this.state.stuck} format="d"
+                                      options = {{
+                                          theme: 'default',
+                                          duration: 2000
+                                      }}
 
-                                            />
+                            />
                         </b></h3>
                     </div>
                     <div className="home-update">
                         <h4><b>RESOLVED</b></h4>
-                        <h3><b>
-                            <AnimatedNumber component="text" value={this.state.rescued}
-                                            style={{
-                                                transition: '0.8s ease-out',
-                                                fontSize: 48,
-                                                transitionProperty:
-                                                    'background-color, color, opacity'
-                                            }}
-                                            frameStyle={perc => (
-                                                perc === 100 ? {} : {backgroundColor: '#ef6958'}
-                                            )}
+                        <h3 style={{ fontSize: "48px"}}><b>
+                            <Odometer value={this.state.rescued} format="d"
+                                      options = {{
+                                          theme: 'default',
+                                          duration: 2000
+                                      }}
 
                             />
                         </b></h3>
