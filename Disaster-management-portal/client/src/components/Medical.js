@@ -47,7 +47,8 @@ class Medical extends Component
         };
         axios.get(config.url+`getmedicalcount`, req_header)
             .then(res => {
-                const medical = res.data.results[0].data.sort(function(a, b){return b.stuck-a.stuck}).slice(0,10);
+               // const medical = res.data.results[0].data.sort(function(a, b){return b.stuck-a.stuck}).slice(0,10);
+               const medical = res.data.results;
                 //console.log(medical);
                 let city = [];
                 let stuck = [];
