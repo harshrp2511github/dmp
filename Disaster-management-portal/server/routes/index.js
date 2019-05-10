@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var assert = require('assert');
-var url = 'mongodb://admin:admin12345@ds149146.mlab.com:49146/dmp';
-//var url = 'mongodb://ec2-18-220-183-234.us-east-2.compute.amazonaws.com:27017/test'
+//var url = 'mongodb://admin:admin12345@ds149146.mlab.com:49146/dmp';
+var url = 'mongodb://ec2-13-59-123-238.us-east-2.compute.amazonaws.com:27017/test'
 var MongoClient = require('mongodb').MongoClient;
 
     router.get('/getfirecount', (req, res) => {
@@ -12,7 +12,7 @@ var MongoClient = require('mongodb').MongoClient;
             assert.equal(null, err);
             console.log('Connected successfully to server');
 
-            const db = client.db('dmp');
+            const db = client.db('test');
 
             db.collection('FireCount')
                 .find()
@@ -38,7 +38,7 @@ router.get('/getfiredata', (req, res) => {
             assert.equal(null, err);
             console.log('Connected successfully to server');
 
-            const db = client.db('dmp');
+            const db = client.db('test');
 
             db.collection('FireData')
                 .find()
@@ -63,7 +63,7 @@ router.get('/getfoodcount', (req, res) => {
             assert.equal(null, err);
             console.log('Connected successfully to server');
 
-            const db = client.db('dmp');
+            const db = client.db('test');
 
             db.collection('FoodCount')
                 .find()
@@ -89,7 +89,7 @@ router.get('/getfooddata', (req, res) => {
             assert.equal(null, err);
             console.log('Connected successfully to server');
 
-            const db = client.db('dmp');
+            const db = client.db('test');
 
             db.collection('FoodData')
                 .find()
@@ -115,7 +115,7 @@ router.get('/getmedicalcount', (req, res) => {
             assert.equal(null, err);
             console.log('Connected successfully to server');
 
-            const db = client.db('dmp');
+            const db = client.db('test');
 
             db.collection('MedicalCount')
                 .find()
@@ -141,7 +141,7 @@ router.get('/getmedicaldata', (req, res) => {
             assert.equal(null, err);
             console.log('Connected successfully to server');
 
-            const db = client.db('dmp');
+            const db = client.db('test');
 
             db.collection('MedicalData')
                 .find()
@@ -167,7 +167,7 @@ router.get('/getsheltercount', (req, res) => {
             assert.equal(null, err);
             console.log('Connected successfully to server');
 
-            const db = client.db('dmp');
+            const db = client.db('test');
 
             db.collection('ShelterCount')
                 .find()
@@ -193,7 +193,7 @@ router.get('/getshelterdata', (req, res) => {
             assert.equal(null, err);
             console.log('Connected successfully to server');
 
-            const db = client.db('dmp');
+            const db = client.db('test');
 
             db.collection('ShelterData')
                 .find()
@@ -218,7 +218,7 @@ router.get('/getallcount', (req, res) => {
             assert.equal(null, err);
             console.log('Connected successfully to server');
 
-            const db = client.db('dmp');
+            const db = client.db('test');
 
             db.collection('AllCount')
                 .find().sort({_id: -1}).limit(1)
